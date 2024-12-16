@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rss, Twitter, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import GoogleTranslate from './GoogleTranslate'; // Import GoogleTranslate component
 
 const Footer = () => {
   return (
@@ -53,11 +54,7 @@ const Footer = () => {
             <a href="#" className="hover:text-[#e341ff]"><Twitter /></a>
             <a href="#" className="hover:text-[#e341ff]"><Facebook /></a>
           </div>
-          <select className="mt-4 bg-[#2d1f42] text-white px-4 py-2 rounded-lg w-full">
-            <option>Select Language</option>
-            <option>English</option>
-            <option>Hindi</option>
-          </select>
+          <div className="mt-6"><GoogleTranslate /></div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
