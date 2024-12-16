@@ -7,7 +7,13 @@ import StartUpInsights from './components/StartUpInsights';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import GovernmentSchemesSection from './components/GovernmentSchemesSection';
-import About from './pages/About'; // Import the About page
+import About from './pages/About'; 
+import FAQ from './pages/FAQ';
+import Contact from './pages/Contact'; // Import the Contact page
+import Investments from './pages/Investments'; // Import the Investments page
+import Blog from './pages/Blog'; 
+import SignInSignUp from './pages/SignInSignUp'; // Import SignInSignUp page
+import MyFeed from './pages/MyFeed'; // Import MyFeed page
 
 function App() {
   return (
@@ -24,7 +30,13 @@ function App() {
               <Newsletter />
             </>
           } />
-          <Route path="/about" element={<About />} /> {/* Add route for About page */}
+          <Route path="/about" element={<About />} /> 
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} /> 
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/investments" element={<Investments />} />
+          <Route path="/signin-signup" element={<SignInSignUp />} />
+          <Route path="/my-feed" element={<MyFeed />} /> {/* Add route for My Feed */}
         </Routes>
         <Footer />
       </div>

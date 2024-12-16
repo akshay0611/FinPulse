@@ -6,32 +6,32 @@ const GovernmentSchemesSection = () => {
     {
       title: "Pradhan Mantri Awas Yojana (PMAY)",
       description: "The PMAY aims to provide affordable housing for all by the year 2022, through subsidies, loans, and government support.",
-      imageUrl: "https://images.unsplash.com/photo-1583118139079-e0e9c1a39e58?fit=crop&w=1000&q=80",
+      imageUrl: "https://via.placeholder.com/600x400?text=PMAY", // Placeholder image
     },
     {
       title: "PM Kisan Yojana",
       description: "PM Kisan Yojana provides financial support to small and marginal farmers across the country.",
-      imageUrl: "https://images.unsplash.com/photo-1583118162740-9291d0b9a438?fit=crop&w=1000&q=80",
+      imageUrl: "https://via.placeholder.com/600x400?text=PM+Kisan+Yojana", // Placeholder image
     },
     {
       title: "Atmanirbhar Bharat Abhiyan",
       description: "The Atmanirbhar Bharat scheme aims to make India self-reliant by supporting local businesses, industries, and the workforce.",
-      imageUrl: "https://images.unsplash.com/photo-1604727415350-1d6e570b5020?fit=crop&w=1000&q=80",
+      imageUrl: "https://via.placeholder.com/600x400?text=Atmanirbhar+Bharat", // Placeholder image
     },
     {
       title: "Pradhan Mantri Jan Dhan Yojana",
       description: "A financial inclusion scheme to ensure that every household has access to basic financial services, including a bank account.",
-      imageUrl: "https://images.unsplash.com/photo-1593542259389-56c0b6b634fc?fit=crop&w=1000&q=80",
+      imageUrl: "https://via.placeholder.com/600x400?text=Jan+Dhan+Yojana", // Placeholder image
     },
     {
       title: "Ayushman Bharat",
       description: "Ayushman Bharat aims to provide health insurance coverage to the poor and vulnerable families across India.",
-      imageUrl: "https://images.unsplash.com/photo-1577145613377-0e13ff21fc4f?fit=crop&w=1000&q=80",
+      imageUrl: "https://via.placeholder.com/600x400?text=Ayushman+Bharat", // Placeholder image
     },
     {
       title: "Make in India",
       description: "This initiative encourages domestic manufacturing and aims to make India a global manufacturing hub.",
-      imageUrl: "https://images.unsplash.com/photo-1610543420424-70d4b3473206?fit=crop&w=1000&q=80",
+      imageUrl: "https://via.placeholder.com/600x400?text=Make+in+India", // Placeholder image
     }
   ];
 

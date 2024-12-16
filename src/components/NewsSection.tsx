@@ -28,24 +28,24 @@ const NewsSection = () => {
     {
       title: "US Fed signals possible interest rate hike in 2025",
       description: "The US Federal Reserve has indicated the possibility of increasing interest rates to combat rising inflation in the coming year.",
-      imageUrl: "https://images.unsplash.com/photo-1572032980435-7d8fe1235103?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZlZGVyYWwlMjBmb3JlY3VzdGVyY3VsdHVyZXxlbnwwfHx8fDE2NzU5NjkwNzE&ixlib=rb-1.2.1&q=80&w=1080",
+      imageUrl: "https://via.placeholder.com/1080x720?text=US+Fed+Interest+Rate+Hike", // Placeholder image
       publishedAt: "15 Dec 2024, 3:00 PM",
       source: "Reuters"
     },
     {
       title: "Tesla shares rise as new model is announced",
       description: "Tesla's new electric vehicle model has been met with strong investor interest, leading to a significant uptick in its stock price.",
-      imageUrl: "https://images.unsplash.com/photo-1599647232031-c1e9c9c7a015?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZlbmR8ZW58MHx8fHwxNjc1OTY5MDcx&ixlib=rb-1.2.1&q=80&w=1080",
+      imageUrl: "https://via.placeholder.com/1080x720?text=Tesla+Shares+Rise", // Placeholder image
       publishedAt: "14 Dec 2024, 2:30 PM",
       source: "TechCrunch"
     },
     {
-      title: "Tesla shares rise as new model is announced",
-      description: "Tesla's new electric vehicle model has been met with strong investor interest, leading to a significant uptick in its stock price.",
-      imageUrl: "https://images.unsplash.com/photo-1599647232031-c1e9c9c7a015?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGZlbmR8ZW58MHx8fHwxNjc1OTY5MDcx&ixlib=rb-1.2.1&q=80&w=1080",
-      publishedAt: "14 Dec 2024, 2:30 PM",
-      source: "TechCrunch"
-    }
+      title: "Apple announces new AR headset with revolutionary features",
+      description: "Apple's new augmented reality headset promises to change the way we interact with the digital world, featuring cutting-edge technology and immersive experiences.",
+      imageUrl: "https://via.placeholder.com/1080x720?text=Apple+AR+Headset", // Placeholder image
+      publishedAt: "16 Dec 2024, 10:00 AM",
+      source: "Apple News"
+    }    
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
