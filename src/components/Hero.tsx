@@ -11,17 +11,17 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
-      <h1 className="text-6xl font-bold mb-6">
+    <div className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 relative">
+      <h1 className="text-6xl font-bold mb-8">
         INDIA'S FIRST<br />
-        <span className="text-7xl">SMART <span className="text-yellow-300">News FIN-APP</span></span>
+        <span className="text-7xl">SMART <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">News FIN-APP</span></span>
       </h1>
-      
-      <p className="text-2xl mb-8 text-gray-200">
+
+      <p className="text-xl text-white mb-12">
         "Where Intelligence Meets Finance"
       </p>
       
-      <button className="bg-yellow-300 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition-colors text-indigo-900 mb-16">
+      <button className="bg-emerald-500 px-8 py-3 rounded-full text-lg font-semibold hover:bg-emerald-600 transition-colors text-white mb-16">
         www.FinPulse.in
       </button>
 
@@ -30,8 +30,8 @@ const Hero = () => {
         className="flex flex-col items-center justify-center mt-20 animate-bounce cursor-pointer"
         onClick={scrollDown}
       >
-        <p className="text-sm text-gray-300 mb-2">Scroll down for more</p>
-        <ArrowDown className="h-8 w-8 text-yellow-300" />
+        <p className="text-sm text-white mb-4">Scroll down for more</p>
+        <ArrowDown className="h-8 w-8 text-emerald-400" />
       </div>
     </div>
   );

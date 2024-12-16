@@ -54,7 +54,7 @@ const Newsletter = () => {
 
   const totalPages = Math.ceil(allNewsletters.length / itemsPerPage);
 
-  const handlePageClick = (page) => {
+  const handlePageClick = (page: React.SetStateAction<number>) => {
     setCurrentPage(page);
   };
 
