@@ -63,7 +63,6 @@ const NewsSection = () => {
   };
 
   const displayedNews = allNews.slice(currentIndex, currentIndex + 3);
-
   return (
     <div className="bg-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -77,14 +76,14 @@ const NewsSection = () => {
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="px-4 py-2 bg-gray-500 text-white rounded-md disabled:opacity-50 flex items-center"
+            className="px-4 py-2 bg-emerald-500 text-white rounded-md disabled:opacity-50 flex items-center"
           >
             <AiOutlineLeft size={24} /> {/* Left Arrow Icon */}
           </button>
           <button
             onClick={handleNext}
             disabled={currentIndex + 3 >= allNews.length}
-            className="px-4 py-2 bg-gray-500 text-white rounded-md disabled:opacity-50 flex items-center"
+            className="px-4 py-2 bg-emerald-500 text-white rounded-md disabled:opacity-50 flex items-center"
           >
             <AiOutlineRight size={24} /> {/* Right Arrow Icon */}
           </button>

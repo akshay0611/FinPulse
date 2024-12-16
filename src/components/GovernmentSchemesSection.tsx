@@ -65,7 +65,7 @@ const GovernmentSchemesSection = () => {
               />
               <h3 className="text-xl font-semibold mb-2">{scheme.title}</h3>
               <p className="text-gray-700 flex-grow mb-4">{scheme.description}</p>
-              <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 mt-auto">
+              <button className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 mt-auto">
                 Explore More
               </button>
             </div>
@@ -75,14 +75,14 @@ const GovernmentSchemesSection = () => {
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="px-4 py-2 bg-gray-500 text-white rounded-md disabled:opacity-50 flex items-center"
+            className="px-4 py-2 bg-emerald-500 text-white rounded-md disabled:opacity-50 flex items-center"
           >
             <AiOutlineLeft size={24} /> {/* Left Arrow Icon */}
           </button>
           <button
             onClick={handleNext}
             disabled={currentIndex + 3 >= allSchemes.length}
-            className="px-4 py-2 bg-gray-500 text-white rounded-md disabled:opacity-50 flex items-center"
+            className="px-4 py-2 bg-emerald-500 text-white rounded-md disabled:opacity-50 flex items-center"
           >
             <AiOutlineRight size={24} /> {/* Right Arrow Icon */}
           </button>
