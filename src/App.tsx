@@ -14,6 +14,7 @@ import Investments from './pages/Investments'; // Import the Investments page
 import Blog from './pages/Blog'; 
 import SignInSignUp from './pages/SignInSignUp'; // Import SignInSignUp page
 import MyFeed from './pages/MyFeed'; // Import MyFeed page
+import News from './pages/News'; // Adjust the path as needed
 
 function App() {
   return (
@@ -36,7 +37,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/investments" element={<Investments />} />
           <Route path="/signin-signup" element={<SignInSignUp />} />
-          <Route path="/my-feed" element={<MyFeed />} /> {/* Add route for My Feed */}
+          <Route path="/my-feed" element={<MyFeed />} /> 
+          <Route path="/news" element={<News />} />
         </Routes>
         <Footer />
       </div>
