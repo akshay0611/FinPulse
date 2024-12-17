@@ -12,7 +12,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="flex-1 max-w-xl mx-8">
+      <div className="flex-1 max-w-sm mx-auto" style={{ marginLeft: '270px' }}> {/* Apply inline style to shift the search bar */}
         <div className="relative">
           <input
             type="text"
@@ -24,17 +24,16 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center space-x-6">
-      <Link to="/about" className="hover:text-emerald-400">About</Link>
-      <Link to="/news" className="hover:text-emerald-400">News</Link>
-      <Link to="/schemes" className="hover:text-emerald-400">Schemes</Link>
-      <Link to="/investments" className="hover:text-emerald-400">Investments</Link>
+        <Link to="/about" className="hover:text-emerald-400">About</Link>
+        <Link to="/news" className="hover:text-emerald-400">News</Link>
+        <Link to="/schemes" className="hover:text-emerald-400">Schemes</Link>
+        <Link to="/investments" className="hover:text-emerald-400">Investments</Link>
         <a href="/blog" className="hover:text-emerald-400">Blogs</a>
         <Link to="/signin-signup">
           <button className="bg-emerald-400 px-4 py-2 rounded-lg text-indigo-900 font-bold hover:bg-emerald-500">
-          Sign In / Sign Up
+            Sign In / Sign Up
           </button>
         </Link>
-
       </div>
     </nav>
   );
