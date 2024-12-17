@@ -24,11 +24,11 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center space-x-6">
+      <Link to="/about" className="hover:text-emerald-400">About</Link>
+      <Link to="/news" className="hover:text-emerald-400">News</Link>
+      <Link to="/schemes" className="hover:text-emerald-400">Schemes</Link>
+      <Link to="/investments" className="hover:text-emerald-400">Investments</Link>
         <a href="/blog" className="hover:text-emerald-400">Blogs</a>
-        <Link to="/my-feed" className="hover:text-emerald-400">My Feed</Link>
-        <Link to="/news" className="hover:text-emerald-400">News</Link>
-        <Link to="/schemes" className="hover:text-emerald-400">Schemes</Link> {/* Updated to Link */}
-        <a href="#" className="hover:text-emerald-400">Newsletter</a>
         <Link to="/signin-signup">
           <button className="bg-emerald-400 px-4 py-2 rounded-lg text-indigo-900 font-bold hover:bg-emerald-500">
           Sign In / Sign Up
