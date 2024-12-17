@@ -58,7 +58,6 @@ To get started with FinPulse, follow these steps:
 - **Home Page**: Features a hero section, latest news, and insights into government schemes. 🏡
 - **Investments Page**: Explore various investment options with detailed descriptions and features. 📊
 - **Blog Page**: Read articles on financial tips, strategies, and the latest industry trends. 📰
-- **My Feed**: Personalized content tailored to user preferences and financial goals. 🔥
 - **Contact Page**: Reach out for support, inquiries, or suggestions. 📧
 
 ## Contributing 🤝
