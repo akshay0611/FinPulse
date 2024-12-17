@@ -4,100 +4,154 @@ import Footer from '../components/Footer';
 
 const About = () => {
   return (
-    <div className="bg-[#f8f9fa]">
+    <div className="bg-gradient-to-br from-[#f8f9fa] to-[#e8f5e9] min-h-screen flex flex-col">
       <Navbar />
-      <section className="py-16 px-6 mt-20">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-[rgb(52,211,153)] mb-6">About Us</h1>
-          <p className="text-xl text-[#333333] mb-12 max-w-3xl mx-auto leading-relaxed">
-            FinPulse is your trusted companion for financial guidance and investment strategies. We aim to empower
-            individuals and businesses with the knowledge, tools, and resources to make informed decisions and secure
-            their financial future.
+      <main className="flex-grow py-16 px-6 mt-20">
+        {/* Hero Section */}
+        <section className="max-w-7xl mx-auto text-center mb-16">
+          <h1 className="text-6xl font-extrabold text-[rgb(52,211,153)] mb-6 drop-shadow-lg">About Us</h1>
+          <p className="text-2xl text-[#333333] leading-relaxed mx-auto max-w-3xl">
+            FinPulse is your trusted companion for financial guidance and investment strategies. We empower individuals
+            and businesses with the tools, resources, and knowledge to make informed decisions and secure their financial future.
           </p>
-        </div>
-        
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="flex items-center justify-center">
+        </section>
+
+        {/* Mission and Values Section */}
+        <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
             <img 
-              src="https://via.placeholder.com/400" 
-              alt="Team Image"
-              className="rounded-lg shadow-xl max-w-full"
+              src="https://via.placeholder.com/500" 
+              alt="Our Team" 
+              className="rounded-lg shadow-2xl hover:scale-110 transition-transform duration-500 max-w-full object-cover"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-semibold text-gray-800 mb-6">Our Mission</h2>
-            <p className="text-lg text-gray-600 mb-6">
-              At FinPulse, our mission is to provide comprehensive financial advice and insights that help our
-              clients achieve financial stability and growth. We aim to be the leading resource for individuals looking
-              to take control of their financial destiny.
-            </p>
-            
-            <h2 className="text-3xl font-semibold text-gray-800 mb-6">Our Values</h2>
-            <ul className="space-y-4 text-lg text-gray-600">
-              <li className="flex items-center gap-2">
-                <span className="text-[rgb(52,211,153)]">✔️</span> Integrity in all of our dealings.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-[rgb(52,211,153)]">✔️</span> Transparency and clear communication.
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-[rgb(52,211,153)]">✔️</span> Commitment to customer success.
-              </li>
-            </ul>
+            <div className="mb-12">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4 border-l-8 border-[rgb(52,211,153)] pl-4">Our Mission</h2>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                At FinPulse, our mission is to provide comprehensive financial advice and insights to help our clients achieve
+                financial stability and long-term growth. We are committed to guiding individuals toward taking control of their financial journey.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4 border-l-8 border-[rgb(52,211,153)] pl-4">Our Values</h2>
+              <ul className="space-y-6 text-lg text-gray-700">
+                {['Integrity in all of our dealings.', 'Transparency and clear communication.', 'Commitment to customer success.'].map((value, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <span className="text-[rgb(52,211,153)] text-3xl font-bold">&#10004;</span>
+                    {value}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
+        </section>
+
+
+
+
         
-        <div className="max-w-7xl mx-auto text-center mt-16">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-6">Meet Our Team</h2>
+
+        {/* Team Section */}
+        <section className="max-w-7xl mx-auto text-center mt-20">
+          <h2 className="text-4xl font-bold text-gray-800 mb-12">Board Of <span className="text-blue-600">Directors</span></h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <img 
-                src="https://via.placeholder.com/150" 
-                alt="Team Member"
-                className="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-800">John Doe</h3>
-              <p className="text-gray-600">CEO & Founder</p>
-              <p className="text-gray-500 mt-4">
-                John is the visionary behind FinPulse. With years of experience in financial services, he leads the
-                team with a passion for helping others achieve their financial goals.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <img 
-                src="https://via.placeholder.com/150" 
-                alt="Team Member"
-                className="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-800">Jane Smith</h3>
-              <p className="text-gray-600">Chief Financial Officer</p>
-              <p className="text-gray-500 mt-4">
-                Jane oversees FinPulse's financial operations and ensures we stay on the right track. Her expertise
-                in managing finances has been crucial to the company's success.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <img 
-                src="https://via.placeholder.com/150" 
-                alt="Team Member"
-                className="w-24 h-24 rounded-full mx-auto mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-800">Alex Lee</h3>
-              <p className="text-gray-600">Head of Marketing</p>
-              <p className="text-gray-500 mt-4">
-                Alex drives the marketing strategies at FinPulse. With a strong background in digital marketing, he
-                ensures that our mission and values are shared with the world.
-              </p>
-            </div>
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 transform relative overflow-hidden group"
+              >
+                <div className="flex justify-center mb-6">
+                  <div className="rounded-tl-[50px] rounded-br-[50px] overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-48 h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-2">{member.name}</h3>
+                <p className="text-green-500 font-medium mb-4">{member.position}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {member.bio}
+                </p>
+                <a href={member.linkedin} target="_blank" rel="noreferrer" className="absolute bottom-4 right-4">
+                  <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" className="w-6 h-6" />
+                </a>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
-      
-      
+        </section>
+
+{/* Our Culture Section */}
+<section className="max-w-7xl mx-auto text-center mt-20">
+  <h2 className="text-4xl font-bold text-gray-800 mb-12">FinPulse <span className="text-green-500">Culture</span></h2>
+  
+  {/* Add Image Above */}
+  <div className="mb-12">
+    <img 
+      src="https://cdn.fundsindia.com/prelogin/our-culture_24.png?auto=format&fit=max&w=828" 
+      alt="Our Culture" 
+      className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl"
+    />
+    
+    {/* Text and Button Under the Image */}
+    <p className="text-lg text-gray-700 leading-relaxed mb-8 mt-8">
+      A dynamic environment for a dynamic team. We pour our souls into our craft, but that doesn’t compromise on our ability to keep the work environment lively.
+      We don’t juggle work and life; we handle it like the Pros we are!
+    </p>
+
+    {/* Styled 'Work With Us' Button */}
+    <a 
+      href="#"
+      className="inline-block bg-[rgb(52,211,153)] text-white py-4 px-10 rounded-full text-xl font-semibold transform transition-all duration-300 hover:bg-[rgb(36,174,106)] hover:scale-105 hover:shadow-lg"
+    >
+      Work With Us
+    </a>
+  </div>
+</section>
+
+
+
+
+       
+
+
+
+
+
+
+
+
+      </main>
+     
     </div>
   );
 };
+
+const teamMembers = [
+  {
+    name: 'Sandeep Singhal',
+    position: 'Director',
+    bio: 'Sandeep brings years of leadership and expertise to the board, helping FinPulse scale to new heights.',
+    image: 'https://via.placeholder.com/500',
+    linkedin: 'https://www.linkedin.com/',
+  },
+  {
+    name: 'Deepak Ramineedi',
+    position: 'Director',
+    bio: 'Deepak provides strategic insights and ensures FinPulse remains aligned with client success.',
+    image: 'https://via.placeholder.com/500',
+    linkedin: 'https://www.linkedin.com/',
+  },
+  {
+    name: 'Girirajan Murugan',
+    position: 'Director & CEO',
+    bio: 'Girirajan leads the company as CEO, driving innovation and financial solutions for our clients.',
+    image: 'https://via.placeholder.com/500',
+    linkedin: 'https://www.linkedin.com/',
+  },
+];
 
 export default About;
