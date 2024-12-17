@@ -27,7 +27,7 @@ const Navbar = () => {
         <a href="/blog" className="hover:text-emerald-400">Blogs</a>
         <Link to="/my-feed" className="hover:text-emerald-400">My Feed</Link>
         <Link to="/news" className="hover:text-emerald-400">News</Link>
-        <a href="#" className="hover:text-emerald-400">Schemes</a>
+        <Link to="/schemes" className="hover:text-emerald-400">Schemes</Link> {/* Updated to Link */}
         <a href="#" className="hover:text-emerald-400">Newsletter</a>
         <Link to="/signin-signup">
           <button className="bg-emerald-400 px-4 py-2 rounded-lg text-indigo-900 font-bold hover:bg-emerald-500">
