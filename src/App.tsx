@@ -15,6 +15,7 @@ import Blog from './pages/Blog';
 import SignInSignUp from './pages/SignInSignUp'; // Import SignInSignUp page
 import News from './pages/News'; // Adjust the path as needed
 import Schemes from './pages/Schemes';
+import WhyChooseUs from './components/WhyChooseUs'; // Import the new component
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <WhyChooseUs /> {/* Add the new section here */}
               <NewsSection />
               <GovernmentSchemesSection />
               <StartUpInsights />
