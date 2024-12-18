@@ -16,6 +16,7 @@ import SignInSignUp from './pages/SignInSignUp'; // Import SignInSignUp page
 import News from './pages/News'; // Adjust the path as needed
 import Schemes from './pages/Schemes';
 import WhyChooseUs from './components/WhyChooseUs'; // Import the new component
+import Testimonial from './components/Testimonial'; // Import the Testimonial section
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <WhyChooseUs /> {/* Add the new section here */}
               <NewsSection />
               <GovernmentSchemesSection />
+              <Testimonial /> {/* Add the Testimonial section below WhyChooseUs */}
               <StartUpInsights />
               <Newsletter />
             </>
