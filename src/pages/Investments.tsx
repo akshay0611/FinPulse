@@ -3,103 +3,96 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Investments = () => {
-  const investmentOptions = [
+  const investmentIdeas = [
     {
       title: 'Mutual Funds',
       description:
-        'With FinPulse, invest in Mutual Funds online with just a few clicks. Expert recommendations & an easy-to-use interface make investing child’s play.',
+        'Mutual Funds pool money from multiple investors to invest in a diversified portfolio of stocks, bonds, or other securities. It provides an easy way for individual investors to access professionally managed portfolios.',
       features: [
-        'Goal-driven financial advice',
-        'Instant personalized recommendations',
-        'Flexible SIPs, trigger-based investing, instant portfolio reviews & more',
+        'Diversification: Mutual funds allow investors to own a small portion of a wide variety of assets.',
+        'Professional Management: Fund managers make the decisions on where to invest the pooled money.',
+        'Liquidity: Most mutual funds allow you to redeem your shares at any time.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/mutual-funds.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Get Started',
     },
     {
       title: 'Stocks',
       description:
-        'Dalal Street now on your Computers & Smartphones. Stock Recommendations, Reviews, Goal-based recommendations and much more!',
+        'Investing in stocks means buying shares of ownership in a company. It offers potential returns through capital appreciation and dividends, but it comes with higher risk compared to other investment vehicles.',
       features: [
-        'Equity baskets feature for ease of investing',
-        'Active monitoring of your portfolio',
-        'Buy Today Sell Tomorrow (BTST), MTF & more',
+        'Ownership: Stockholders are part-owners of the company, with voting rights on certain company matters.',
+        'Dividends: Many companies pay dividends to their shareholders, providing an additional income stream.',
+        'Capital Appreciation: Stock prices can increase, providing an opportunity for gains over time.',
       ],
-      image: 'https://cdn.fundsindia.com/prelogin/stock.webp?auto=format&fit=max&w=1200', 
-      buttonText: 'Stock Up',
+      image: 'https://cdn.fundsindia.com/prelogin/stock.webp?auto=format&fit=max&w=1200',
     },
     {
       title: 'Corporate Fixed Deposits',
       description:
-        'FundsIndia offers Fixed Deposits from leading corporate houses to give you the best of benefits.',
+        'Corporate Fixed Deposits (FDs) are term deposits offered by companies, providing a fixed rate of return over a specific period. They are typically seen as safer than stocks, though slightly riskier than traditional bank FDs.',
       features: [
-        'Select FDs',
-        'Safety coupled with high returns',
-        'Flexibility',
+        'Fixed Returns: Corporate FDs offer fixed interest rates, providing predictable returns.',
+        'Tenure Flexibility: The investment period can be customized to match your financial goals.',
+        'Risk: While safer than stocks, they carry the risk of the issuing company defaulting.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/fixed-deposits.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Start Saving',
     },
     {
       title: 'NPS (National Pension System)',
       description:
-        'We cannot help but have this awesome retirement planning tool on our platform. Start an NPS account and keep that bucket list going!',
+        'The National Pension System (NPS) is a government-sponsored pension scheme designed to help individuals build a retirement corpus. It allows for investments in equity, government bonds, and corporate bonds.',
       features: [
-        'Great Tax Benefits',
-        'Choose your own Asset Allocation',
-        'Low Fund Management Cost',
+        'Tax Benefits: NPS offers tax deductions under section 80C and additional deductions for retirement savings.',
+        'Flexibility: Investors can choose their asset allocation between equity, government bonds, and corporate bonds.',
+        'Retirement Focus: The primary goal of NPS is to build a retirement corpus for long-term financial security.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/nps.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Plan a Happy Retirement',
     },
     {
-      title: 'Power STP (FundsIndia Exclusive)',
+      title: 'Systematic Transfer Plan (STP)',
       description:
-        'STP is good, but we made it ‘Better’. Power STP unlearnt uniform periodic deployment & fed on intelligence to shift amounts into equity, based on the market rates.',
+        'A Systematic Transfer Plan (STP) allows investors to transfer a fixed amount from one mutual fund to another at regular intervals. This strategy is used to gradually move investments from a high-risk fund to a low-risk one, or to diversify into other funds based on the investor’s goals.',
       features: [
-        'Intelligent investment per the market conditions',
-        'Consistent & Superior Performance when compared to regular STP',
-        'Suitable for a minimum time horizon of 5-7 years',
+        'Automated Transfers: Transfers occur automatically, allowing for regular fund allocation adjustments.',
+        'Risk Mitigation: Helps reduce the impact of market volatility by gradually transferring investments.',
+        'Flexibility: Investors can choose the amount and frequency of transfers, based on their financial strategy.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/power-stp.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Setup Power STP',
     },
     {
-      title: 'Power SIP (FundsIndia Exclusive)',
+      title: 'Systematic Investment Plan (SIP)',
       description:
-        'Turbocharge your SIP returns. With an intelligent algorithm, PowerSIP shifts your funds between equities and debt to maximize your returns.',
+        'A Systematic Investment Plan (SIP) allows investors to invest a fixed amount regularly in mutual funds. This method encourages disciplined investing and compounding by investing small amounts periodically, regardless of market conditions.',
       features: [
-        'Effective utilisation of Market fluctuations',
-        'Active Plus & Passive Plus',
-        'Suitable for a time horizon of 5+ years',
+        'Regular Contributions: Investors contribute fixed amounts regularly, making investing easy and consistent.',
+        'Dollar-Cost Averaging: SIPs help average the purchase cost, reducing the impact of market fluctuations.',
+        'Long-Term Wealth Creation: SIPs encourage long-term investment, building wealth over time through consistent contributions.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/power-sip.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Setup Power SIP',
     },
     {
-      title: 'Super Savings Account',
+      title: 'Auto Sweep Account',
       description:
-        'Why regular when you could go Super! Same features as Savings account, but almost TWICE THE RETURNS! What’s more - No lock-in period and Zero Account Charges!',
+        'An Auto Sweep Account is a high-interest savings account where excess funds are automatically transferred into Fixed Deposits, offering better returns while maintaining liquidity and easy access to your funds.',
       features: [
-        'High Liquidity',
-        'Zero Account Charges',
-        'No Lock-in Period',
+        'Higher Interest: Earn more on your savings by automatically transferring excess funds into Fixed Deposits.',
+        'No Lock-in Period: Funds remain accessible without restrictions or penalties, even after being transferred to Fixed Deposits.',
+        'Liquidity: Easily access funds transferred to Fixed Deposits whenever needed, ensuring flexibility.',
+        'Low Risk: Offers a safe way to earn higher returns while maintaining easy access to your funds.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/super-savings.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Start Saving',
-    },
+    },    
     {
       title: 'Insurance',
       description:
-        'Investing is not limited to just building wealth; it includes having a backup plan for unfavourable circumstances. Having an insurance policy is common sense, for we all know that life is unpredictable. Hop on to www.merasuraksha.com, a comprehensive insurance platform powered by FundsIndia, and get the ideal policy for you.',
+        'Insurance provides a safety net in case of emergencies. From life insurance to health insurance, it helps mitigate risks by providing financial protection against unforeseen events.',
       features: [
-        'Comprehensive insurance options',
-        'Backup plan for life’s unpredictability',
-        'Visit www.merasuraksha.com for policies',
+        'Risk Mitigation: Insurance policies help manage financial risks from life events or health emergencies.',
+        'Customization: Policies can be tailored to individual needs and preferences.',
+        'Peace of Mind: Insurance offers financial security for you and your family in case of unexpected events.',
       ],
       image: 'https://cdn.fundsindia.com/prelogin/insurance.webp?auto=format&fit=max&w=1080',
-      buttonText: 'Insure Now',
-    }
+    },
   ];
 
   return (
@@ -107,36 +100,28 @@ const Investments = () => {
       <Navbar />
       <section className="py-16 px-6 mt-20 relative overflow-visible">
         <div className="max-w-7xl mx-auto space-y-32">
-        <section className="py-12 px-6 bg-white relative">
-         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
-          {/* Image Section */}
-          <div className="lg:w-1/2 w-full flex justify-center">
-          <img
-          src="https://cdn.fundsindia.com/prelogin/products-image.webp?auto=format&fit=max&w=1080"
-          alt="Products Overview"
-          className="rounded-2xl shadow-lg w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-          />
-          </div>
+          <section className="py-12 px-6 bg-white relative">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
+              {/* Image Section */}
+              <div className="lg:w-1/2 w-full flex justify-center">
+                <img
+                  src="https://cdn.fundsindia.com/prelogin/products-image.webp?auto=format&fit=max&w=1080"
+                  alt="Investment Ideas Overview"
+                  className="rounded-2xl shadow-lg w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
 
-    {/* Text Section */}
-    <div className="lg:w-1/2 w-full mt-8 lg:mt-0 text-left lg:pl-10">
-      <h2 className="text-4xl font-bold text-gray-800 mb-4">Products</h2>
-      <p className="text-gray-600 leading-relaxed mb-6">
-        Welcome to the town of investment! From <span className="font-semibold">Mutual Funds</span> to <span className="font-semibold">Corporate Deposits</span>, we hold a lot in store to suit the goals and needs of every investor and every risk appetite.
-      </p>
-      <div className="flex gap-4">
-        <button className="bg-gradient-to-r from-emerald-400 to-green-500 text-white px-6 py-3 rounded-full font-semibold hover:from-emerald-500 hover:to-green-600 transition duration-300 shadow-lg hover:scale-105">
-          Explore Products
-        </button>
-        <button className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition duration-300 shadow-md hover:scale-105">
-          Learn More
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+              {/* Text Section */}
+              <div className="lg:w-1/2 w-full mt-8 lg:mt-0 text-left lg:pl-10">
+                <h2 className="text-4xl font-bold text-gray-800 mb-4">Investment Ideas</h2>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Explore various investment options and understand their features. Each type offers distinct benefits and is suited for different financial goals.
+                </p>
+              </div>
+            </div>
+          </section>
 
-          {investmentOptions.map((investment, index) => (
+          {investmentIdeas.map((investment, index) => (
             <div
               key={index}
               className={`flex flex-col lg:flex-row items-center bg-gradient-to-br from-green-50 to-gray-50 rounded-2xl shadow-lg relative z-10 ${
@@ -168,18 +153,6 @@ const Investments = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="flex gap-4">
-                  {/* Primary Button */}
-                  <button className="bg-gradient-to-r from-emerald-400 to-green-500 text-white px-6 py-3 rounded-full font-semibold hover:from-emerald-500 hover:to-green-600 transition duration-300 shadow-lg hover:scale-105">
-                    {investment.buttonText}
-                  </button>
-                  {/* Secondary Button: Conditionally Rendered */}
-                    {investment.title !== 'Insurance' && (
-                     <button className="bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition duration-300 shadow-md hover:scale-105">
-                     Read More
-                     </button>
-                  )}
-                </div>
               </div>
             </div>
           ))}
@@ -200,7 +173,6 @@ const Investments = () => {
           </svg>
         </div>
       </section>
-      
     </div>
   );
 };
