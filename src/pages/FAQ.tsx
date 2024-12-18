@@ -11,22 +11,37 @@ const FAQs = () => {
     {
       question: "What is FinPulse?",
       answer:
-        "FinPulse is your trusted companion for financial guidance and investment strategies, tailored to help you make informed decisions.",
+        "FinPulse is your go-to platform for the latest financial news, updates on government schemes, and fresh investment ideas. You can access all of this information without the need to sign up or log in. Everything you need is available right away!",
     },
     {
-      question: "How do I get started with Fin-Buddy?",
+      question: "Do I need to create an account to access the content on FinPulse?",
       answer:
-        "To get started with Fin-Buddy, simply sign up for a free account, set your financial goals, and let our AI-powered advisor guide you.",
+        "No, you don’t need to create an account or log in to view the content. All news, government schemes, and investment ideas are available to everyone, free of any sign-up requirements.",
     },
     {
-      question: "Can I cancel my subscription anytime?",
+      question: "How can I stay updated with the latest financial news?",
       answer:
-        "Yes, you can cancel your subscription at any time from your account settings. There are no hidden charges.",
+        "Simply visit FinPulse to get the latest updates on financial trends, news, and government schemes. You don’t need an account—just access the site to stay informed.",
+    },
+    {
+      question: "Can I find government schemes on FinPulse?",
+      answer:
+        "Yes, FinPulse regularly updates information about government schemes that could benefit individuals, businesses, and investors. All of this is available without needing to log in or register.",
+    },
+    {
+      question: "Does FinPulse provide financial advice?",
+      answer:
+        "No, FinPulse does not provide financial advice. We offer news, updates on government schemes, and investment ideas to keep you informed, but the decision-making is entirely up to you.",
+    },
+    {
+      question: "How do I get started with FinPulse?",
+      answer:
+        "There's no need to sign up or log in. Just visit the site to explore the latest financial news, government schemes, and investment ideas. Everything is available to you without any barriers.",
     },
     {
       question: "Is my personal data secure with FinPulse?",
       answer:
-        "Absolutely. We prioritize your privacy and use state-of-the-art encryption to protect your data.",
+        "Absolutely! We take your privacy seriously. Since there is no sign-up process, we don’t collect any personal information from you. Your data is safe with us.",
     },
   ];
 
@@ -49,20 +64,19 @@ const FAQs = () => {
             Have questions? We have answers! Browse through our FAQs below to learn more about FinPulse and our services.
           </p>
 
-        {/* Search Bar */}
-        <div className="relative mb-12 max-w-lg mx-auto">
-       <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-       <FiSearch size={20} />
-      </span>
-      <input
-      type="text"
-      placeholder="Search for a question..."
-      value={searchQuery}
-      onChange={(e) => setSearchQuery(e.target.value)}
-      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[rgb(52,211,153)]"
-      />
-    </div>
-
+          {/* Search Bar */}
+          <div className="relative mb-12 max-w-lg mx-auto">
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+              <FiSearch size={20} />
+            </span>
+            <input
+              type="text"
+              placeholder="Search for a question..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[rgb(52,211,153)]"
+            />
+          </div>
 
           {/* FAQ List */}
           {filteredFAQs.length > 0 ? (
@@ -100,7 +114,6 @@ const FAQs = () => {
           )}
         </div>
       </section>
-      
     </div>
   );
 };

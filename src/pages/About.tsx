@@ -11,8 +11,7 @@ const About = () => {
         <section className="max-w-7xl mx-auto text-center mb-16">
           <h1 className="text-6xl font-extrabold text-[rgb(52,211,153)] mb-6 drop-shadow-lg">About Us</h1>
           <p className="text-2xl text-[#333333] leading-relaxed mx-auto max-w-3xl">
-            FinPulse is your trusted companion for financial guidance and investment strategies. We empower individuals
-            and businesses with the tools, resources, and knowledge to make informed decisions and secure their financial future.
+            FinPulse is your trusted companion for financial insights and information. We provide timely news, updates on government schemes, and investment ideas to empower individuals and businesses with the knowledge they need to make informed financial decisions.
           </p>
         </section>
 
@@ -29,15 +28,14 @@ const About = () => {
             <div className="mb-12">
               <h2 className="text-4xl font-bold text-gray-800 mb-4 border-l-8 border-[rgb(52,211,153)] pl-4">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                At FinPulse, our mission is to provide comprehensive financial advice and insights to help our clients achieve
-                financial stability and long-term growth. We are committed to guiding individuals toward taking control of their financial journey.
+                At FinPulse, our mission is to provide timely and accurate financial news, government schemes updates, and investment insights to help our users stay informed and make empowered financial decisions.
               </p>
             </div>
 
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-4 border-l-8 border-[rgb(52,211,153)] pl-4">Our Values</h2>
               <ul className="space-y-6 text-lg text-gray-700">
-                {['Integrity in all of our dealings.', 'Transparency and clear communication.', 'Commitment to customer success.'].map((value, index) => (
+                {['Transparency in sharing financial information.', 'Empowering our users with the latest financial trends.', 'Commitment to providing up-to-date news and insights.'].map((value, index) => (
                   <li key={index} className="flex items-start gap-4">
                     <span className="text-[rgb(52,211,153)] text-3xl font-bold">&#10004;</span>
                     {value}
@@ -47,11 +45,6 @@ const About = () => {
             </div>
           </div>
         </section>
-
-
-
-
-        
 
         {/* Team Section */}
         <section className="max-w-7xl mx-auto text-center mt-20">
@@ -84,48 +77,34 @@ const About = () => {
           </div>
         </section>
 
-{/* Our Culture Section */}
-<section className="max-w-7xl mx-auto text-center mt-20">
-  <h2 className="text-4xl font-bold text-gray-800 mb-12">FinPulse <span className="text-green-500">Culture</span></h2>
-  
-  {/* Add Image Above */}
-  <div className="mb-12">
-    <img 
-      src="https://cdn.fundsindia.com/prelogin/our-culture_24.png?auto=format&fit=max&w=828" 
-      alt="Our Culture" 
-      className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl"
-    />
-    
-    {/* Text and Button Under the Image */}
-    <p className="text-lg text-gray-700 leading-relaxed mb-8 mt-8">
-      A dynamic environment for a dynamic team. We pour our souls into our craft, but that doesn’t compromise on our ability to keep the work environment lively.
-      We don’t juggle work and life; we handle it like the Pros we are!
-    </p>
+        {/* Our Culture Section */}
+        <section className="max-w-7xl mx-auto text-center mt-20">
+          <h2 className="text-4xl font-bold text-gray-800 mb-12">FinPulse <span className="text-green-500">Culture</span></h2>
+          
+          {/* Add Image Above */}
+          <div className="mb-12">
+            <img 
+              src="https://cdn.fundsindia.com/prelogin/our-culture_24.png?auto=format&fit=max&w=828" 
+              alt="Our Culture" 
+              className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl"
+            />
+            
+            {/* Text and Button Under the Image */}
+            <p className="text-lg text-gray-700 leading-relaxed mb-8 mt-8">
+              A dynamic environment for a dynamic team. We pour our souls into our craft, but that doesn’t compromise on our ability to keep the work environment lively.
+              We don’t juggle work and life; we handle it like the Pros we are!
+            </p>
 
-    {/* Styled 'Work With Us' Button */}
-    <a 
-      href="#"
-      className="inline-block bg-[rgb(52,211,153)] text-white py-4 px-10 rounded-full text-xl font-semibold transform transition-all duration-300 hover:bg-[rgb(36,174,106)] hover:scale-105 hover:shadow-lg"
-    >
-      Work With Us
-    </a>
-  </div>
-</section>
-
-
-
-
-       
-
-
-
-
-
-
-
-
+            {/* Styled 'Work With Us' Button */}
+            <a 
+              href="#"
+              className="inline-block bg-[rgb(52,211,153)] text-white py-4 px-10 rounded-full text-xl font-semibold transform transition-all duration-300 hover:bg-[rgb(36,174,106)] hover:scale-105 hover:shadow-lg"
+            >
+              Work With Us
+            </a>
+          </div>
+        </section>
       </main>
-     
     </div>
   );
 };
