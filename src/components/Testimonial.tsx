@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 const Rating = ({ rating }) => {
   return (
-    <div className="mb-4 flex justify-center" aria-label={`Rating: ${rating} out of 5`}>
+    <div className="mb-4 flex justify-center space-x-1" aria-label={`Rating: ${rating} out of 5`}>
       {Array.from({ length: 5 }).map((_, index) => (
         <svg
           key={index}
           xmlns="http://www.w3.org/2000/svg"
-          className={`w-6 h-6 ${index < rating ? 'text-[#4ade80]' : 'text-[#d1d5db]'}`}
+          className={`w-6 h-6 transition-all duration-300 transform ${
+            index < rating ? 'text-[#4ade80] scale-110' : 'text-[#d1d5db]'
+          }`}
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -71,7 +73,7 @@ const Testimonial = () => {
 
   return (
     <section
-      className="relative bg-gradient-to-br from-[#f3f4f6] via-[#ffffff] to-[#f3f4f6] px-8 py-20 mt-12"
+      className="relative bg-gradient-to-br from-[#f3f4f6] via-[#ffffff] to-[#f3f4f6] px-8 py-20 mt-12 transition-all duration-500 ease-in-out"
       aria-labelledby="testimonial-heading"
     >
       <div className="container mx-auto max-w-7xl">
@@ -90,7 +92,7 @@ const Testimonial = () => {
 
         <div className="flex flex-col items-center space-y-12 md:space-y-0 md:flex-row md:space-x-16 justify-center transition-transform duration-500 ease-in-out">
           <div
-            className="w-full mx-auto bg-[#ffffff] p-8 rounded-xl shadow-2xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            className="w-full mx-auto bg-[#ffffff] p-8 rounded-xl shadow-2xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             style={{ maxWidth: '450px', minWidth: '300px' }} // Custom card size
           >
             <div className="flex justify-center mb-6">
@@ -124,7 +126,7 @@ const Testimonial = () => {
               onClick={() => handleChangeTestimonial(index)}
               className={`w-4 h-4 rounded-full ${
                 currentTestimonial === index
-                  ? 'bg-[#4ade80] shadow-lg'
+                  ? 'bg-[#4ade80] shadow-lg transform scale-125'
                   : 'bg-[#d1d5db]'
               } transition-all duration-300`}
               aria-label={`View testimonial ${index + 1}`}
