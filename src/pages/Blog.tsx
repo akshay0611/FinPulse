@@ -9,18 +9,21 @@ const Blog = () => {
       description: 'A comprehensive guide for beginners to understand the stock market and how to start investing.',
       date: 'December 10, 2024',
       image: 'https://via.placeholder.com/600x400',
+      url: '/blog/how-to-invest-in-stocks-for-beginners', // Unique URL for this post
     },
     {
       title: '5 Tips for Financial Planning in 2025',
       description: 'Learn the best strategies for financial planning and securing your financial future in the new year.',
       date: 'December 8, 2024',
       image: 'https://via.placeholder.com/600x400',
+      url: '/blog/financial-planning-tips-2025', // Unique URL for this post
     },
     {
       title: 'Understanding Cryptocurrency and Blockchain',
       description: 'A beginner’s guide to understanding cryptocurrency, blockchain technology, and its potential impact on the future.',
       date: 'December 5, 2024',
       image: 'https://via.placeholder.com/600x400',
+      url: '/blog/understanding-cryptocurrency-and-blockchain', // Unique URL for this post
     },
   ];
 
@@ -54,7 +57,7 @@ const Blog = () => {
               <span className="text-gray-400 text-sm">{post.date}</span>
               <div className="mt-4">
                 <a
-                  href="#"
+                  href={post.url} // Dynamic URL for each post
                   className="inline-block text-emerald-400 font-semibold hover:text-emerald-500 transition-colors duration-200"
                 >
                   Read More &rarr;
@@ -65,7 +68,6 @@ const Blog = () => {
         </div>
       </section>
 
-     
     </div>
   );
 };
