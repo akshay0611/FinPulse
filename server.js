@@ -29,12 +29,33 @@ const Blog = mongoose.model('Blog', blogSchema);
 app.get('/api/blog', async (req, res) => {
   try {
     const blogs = await Blog.find();
-    console.log(blogs); // Log blog data here
     res.json({ blogs });  // Send blogs in the expected format
   } catch (error) {
     res.status(500).json({ message: 'Error fetching blogs' });
   }
 });
+
+// Schemes
+const schemeSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  imageUrl: String,
+  exploreUrl: String,
+  category: String,
+});
+
+const Scheme = mongoose.model('Scheme', schemeSchema);
+
+// Endpoint to get all schemes
+app.get('/api/schemes', async (req, res) => {
+  try {
+    const schemes = await Scheme.find();
+    res.json({ schemes });
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching schemes' });
+  }
+});
+
 
 // Server setup
 const port = process.env.PORT || 5001;
