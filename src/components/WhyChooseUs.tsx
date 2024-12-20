@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faNewspaper, faLightbulb, faHandsHelping, faTools } from "@fortawesome/free-solid-svg-icons";
 
 // FeatureItem component
 interface Feature {
@@ -10,13 +12,17 @@ interface Feature {
 
 const FeatureItem = ({ icon, title, description }: Feature) => {
   return (
-    <div className="flex items-center gap-4 bg-white rounded-lg py-6 px-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <div className="w-12 h-12 flex items-center justify-center bg-emerald-100 rounded-full">
-        {icon}
-      </div>
+    <div className="flex items-center gap-4 bg-white rounded-lg py-6 px-8 shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 group">
+    <div className="flex items-center justify-center bg-emerald-100 rounded-full">
+      {icon}
+    </div>
       <div>
-        <p className="text-xl font-semibold text-gray-800">{title}</p>
-        <p className="text-sm text-gray-600 mt-2">{description}</p>
+        <p className="text-xl font-semibold text-gray-800 group-hover:text-emerald-600 transition-colors duration-300">
+          {title}
+        </p>
+        <p className="text-sm text-gray-600 mt-2">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -26,43 +32,27 @@ const FeatureItem = ({ icon, title, description }: Feature) => {
 const features: Feature[] = [
   {
     id: 1,
-    icon: (
-      <svg className="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-8h2v6h-2z" />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faNewspaper} className="text-emerald-500 w-6 h-6" />,
     title: "Summarized Financial News",
-    description: "Get the latest financial news updates, helping you stay informed on global market trends, stock movements, and investment opportunities."
+    description: "Get the latest financial news updates, helping you stay informed on global market trends, stock movements, and investment opportunities.",
   },
   {
     id: 2,
-    icon: (
-      <svg className="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2h2V7h-4v2h2z" />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faLightbulb} className="text-emerald-500 w-6 h-6" />,
     title: "Curated Investment Ideas",
-    description: "Explore curated investment strategies that are suited to your financial goals. Whether you're a beginner or seasoned investor, we have options tailored for you."
+    description: "Explore curated investment strategies that are suited to your financial goals. Whether you're a beginner or seasoned investor, we have options tailored for you.",
   },
   {
     id: 3,
-    icon: (
-      <svg className="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z" />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faHandsHelping} className="text-emerald-500 w-6 h-6" />,
     title: "Government Schemes Updates",
-    description: "Access the latest updates on government schemes designed to help individuals and businesses, with detailed insights on eligibility and benefits."
+    description: "Access the latest updates on government schemes designed to help individuals and businesses, with detailed insights on eligibility and benefits.",
   },
   {
     id: 4,
-    icon: (
-      <svg className="w-6 h-6 text-emerald-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-6h2v2h-2zm0-8h2v6h-2z" />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faTools} className="text-emerald-500 w-6 h-6" />,
     title: "Financial Tools & Resources",
-    description: "Gain access to a suite of financial tools that help you track investments, analyze market trends, and make data-driven decisions."
+    description: "Gain access to a suite of financial tools that help you track investments, analyze market trends, and make data-driven decisions.",
   },
 ];
 
