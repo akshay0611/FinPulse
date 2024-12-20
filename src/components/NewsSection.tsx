@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'; // Importing the icons
 import NewsCard from './NewsCard';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const NewsSection = () => {
   const [newsData, setNewsData] = useState([]); // State for storing news data
@@ -50,7 +51,18 @@ const NewsSection = () => {
   return (
     <div className="bg-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">All Latest Financial Updates</h2>
+        {/* <h2 className="text-3xl font-bold mb-8">All Latest Financial Updates</h2> */}
+
+        {/* Heading and Button */}
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold">All Latest Financial Updates</h2>
+          <Link
+            to="/news" // Use Link to navigate to /schemes
+            className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-all transform hover:scale-105"
+          >
+            View All News
+          </Link>
+        </div>
 
         {loading && <p className="text-center">Loading...</p>}
         {error && <p className="text-center text-red-500">{error}</p>}

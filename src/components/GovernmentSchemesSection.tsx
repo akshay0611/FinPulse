@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'; // Importing the icons
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const GovernmentSchemesSection = () => {
   const [schemesData, setSchemesData] = useState<any[]>([]); // State to store fetched data
@@ -50,7 +51,19 @@ const GovernmentSchemesSection = () => {
   return (
     <div className="bg-gray-50 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">New Government Schemes</h2>
+
+        {/* Heading and Button */}
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold">New Government Schemes</h2>
+          <Link
+            to="/schemes" // Use Link to navigate to /schemes
+            className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition-all transform hover:scale-105"
+          >
+            View All Schemes
+          </Link>
+        </div>
+
+        {/* Schemes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedSchemes.map((scheme, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col h-full group">
