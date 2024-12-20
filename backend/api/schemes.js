@@ -3,12 +3,14 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// MongoDB connection
 if (!mongoose.connection.readyState) {
   mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.log('Failed to connect to MongoDB', err));
 }
 
+// Define Scheme schema and model
 const schemeSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -20,6 +22,11 @@ const schemeSchema = new mongoose.Schema({
 const Scheme = mongoose.model('Scheme', schemeSchema);
 
 export default async function handler(req, res) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', 'https://fin-test-sooty.vercel.app'); // Allow the frontend origin
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   if (req.method === 'GET') {
     try {
       const schemes = await Scheme.find();
