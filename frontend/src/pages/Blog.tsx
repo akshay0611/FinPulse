@@ -53,12 +53,10 @@ const Blog = () => {
                 <p className="text-gray-600 mb-4 flex-grow">{blog.description}</p>
                 <span className="text-gray-400 text-sm">{blog.date}</span>
                 <div className="mt-4">
-              <a
-                href={`/blog/${blog._id}`}  // Use _id to navigate to the specific blog's detail page
-                className="inline-block text-emerald-400 font-semibold hover:text-emerald-500 transition-colors duration-200"
-                >
-                 Read More &rarr;
-              </a>
+                <Link to={`/blog/${blog._id}`} className="inline-block text-emerald-400 font-semibold hover:text-emerald-500 transition-colors duration-200">
+  Read More &rarr;
+</Link>
+
               </div>
               </div>
             ))
