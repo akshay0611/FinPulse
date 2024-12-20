@@ -96,11 +96,11 @@ const Schemes = () => {
                     />
                   )}
                   <div>
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">{scheme.title}</h2>
-                    {/* Badge below the title */}
+                    {/* Badge above the title */}
                     <span className="inline-block bg-emerald-500 text-white font-medium text-xs uppercase tracking-wide rounded-full px-3 py-1 mb-4">
                       {scheme.category}
                     </span>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-2 group-hover:text-[#34d399]">{scheme.title}</h2>
                     <p className="text-gray-600 mb-4">{scheme.description}</p>
                   </div>
                   <a

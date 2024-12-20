@@ -6,7 +6,7 @@ import NewsSection from './components/NewsSection';
 import StartUpInsights from './components/StartUpInsights';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
-// import GovernmentSchemesSection from './components/GovernmentSchemesSection';
+import GovernmentSchemesSection from './components/GovernmentSchemesSection';
 import About from './pages/About'; 
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact'; // Import the Contact page
@@ -29,7 +29,7 @@ function App() {
               <Hero />
               <WhyChooseUs /> {/* Add the new section here */}
               <NewsSection />
-              {/* <GovernmentSchemesSection /> */}
+              <GovernmentSchemesSection />
               <Testimonial /> {/* Add the Testimonial section below WhyChooseUs */}
               <StartUpInsights />
               <Newsletter />
