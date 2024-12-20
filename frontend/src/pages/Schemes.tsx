@@ -35,7 +35,7 @@ const Schemes = () => {
   useEffect(() => {
     const fetchSchemes = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/schemes');
+        const response = await fetch('https://fin-test-2m8d.vercel.app/api/blog');
         if (!response.ok) {
           throw new Error('Failed to fetch schemes');
         }

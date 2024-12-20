@@ -12,7 +12,7 @@ const GovernmentSchemesSection = () => {
   useEffect(() => {
     const fetchSchemes = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/schemes');  // Ensure the URL is correct
+        const response = await fetch('https://fin-test-2m8d.vercel.app/api/blog');  // Ensure the URL is correct
         const data = await response.json();
         setSchemesData(data.schemes.slice(0, 6)); // Limit the fetched data to 6 schemes
         setLoading(false);

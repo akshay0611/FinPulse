@@ -9,7 +9,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/blog');
+        const response = await axios.get('https://fin-test-2m8d.vercel.app/api/blog');
         if (response.data && Array.isArray(response.data.blogs)) {
           setBlogs(response.data.blogs);
         } else {
