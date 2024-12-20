@@ -78,17 +78,6 @@ const Newsletter = () => {
           ))}
         </div>
 
-        {/* CTA Section Below Pagination */}
-        <div className="mt-12 text-center py-6 bg-[#f1f4f9]">
-          <h3 className="text-2xl font-semibold text-[#1f2937] mb-4">Stay Updated with FinPulse!</h3>
-          <p className="text-[#6b7280] mb-6">Subscribe to our newsletter for daily updates on financial news, market insights, and investment strategies.</p>
-          <button
-            onClick={() => alert('Subscribe Now!')}
-            className="bg-[#10b981] text-white py-3 px-6 rounded-lg text-xl hover:bg-[#059669] transition duration-300"
-          >
-            Subscribe Now
-          </button>
-        </div>
       </div>
     </div>
   );
