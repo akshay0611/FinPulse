@@ -17,6 +17,7 @@ import News from './pages/News'; // Adjust the path as needed
 import Schemes from './pages/Schemes';
 import WhyChooseUs from './components/WhyChooseUs'; // Import the new component
 import Testimonial from './components/Testimonial'; // Import the Testimonial section
+import BlogDetail from './pages/BlogDetail';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/signin-signup" element={<SignInSignUp />} />
           <Route path="/news" element={<News />} />
           <Route path="/schemes" element={<Schemes />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />  {/* Blog detail page */}
         </Routes>
         <Footer />
       </div>

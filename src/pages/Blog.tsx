@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 const Blog = () => {
-  const [blogs, setBlogs] = useState<any[]>([]);  // Type for blogs array
+  const [blogs, setBlogs] = useState<any[]>([]);
 
   useEffect(() => {
-    // Fetch blogs from the backend
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/blog'); // Ensure it's pointing to the backend URL
-        console.log('API Response:', response.data); // Log the full response to verify
+        const response = await axios.get('http://localhost:5001/api/blog');
         if (response.data && Array.isArray(response.data.blogs)) {
-          setBlogs(response.data.blogs); // Set blogs correctly
+          setBlogs(response.data.blogs);
         } else {
           console.error('Invalid data format:', response.data);
         }
@@ -55,17 +53,17 @@ const Blog = () => {
                 <p className="text-gray-600 mb-4 flex-grow">{blog.description}</p>
                 <span className="text-gray-400 text-sm">{blog.date}</span>
                 <div className="mt-4">
-                  <a
-                    href={blog.link || "#"}  
-                    className="inline-block text-emerald-400 font-semibold hover:text-emerald-500 transition-colors duration-200"
-                  >
-                    Read More &rarr;
-                  </a>
-                </div>
+              <a
+                href={`/blog/${blog._id}`}  // Use _id to navigate to the specific blog's detail page
+                className="inline-block text-emerald-400 font-semibold hover:text-emerald-500 transition-colors duration-200"
+                >
+                 Read More &rarr;
+              </a>
+              </div>
               </div>
             ))
           ) : (
-            <p>No blogs available</p> // Show a message if no blogs are available
+            <p>No blogs available</p>
           )}
         </div>
       </section>

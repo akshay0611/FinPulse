@@ -20,7 +20,8 @@ const blogSchema = new mongoose.Schema({
   description: String,
   date: String,
   image: String,
-  link: { type: String, required: true }  // Added link property to store the URL for each blog post
+  link: { type: String, required: true },
+  content: String,  // Add the content field to the schema  
 });
 
 const Blog = mongoose.model('Blog', blogSchema);
@@ -32,6 +33,19 @@ app.get('/api/blog', async (req, res) => {
     res.json({ blogs });  // Send blogs in the expected format
   } catch (error) {
     res.status(500).json({ message: 'Error fetching blogs' });
+  }
+});
+
+// API endpoint to get a specific blog post by its ID
+app.get('/api/blog/:id', async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);  // Find blog by ID
+    if (!blog) {
+      return res.status(404).json({ message: 'Blog not found' });
+    }
+    res.json({ blog });  // Send the specific blog post
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching the blog' });
   }
 });
 
