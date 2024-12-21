@@ -18,6 +18,8 @@ import Schemes from './pages/Schemes';
 import WhyChooseUs from './components/WhyChooseUs'; // Import the new component
 import Testimonial from './components/Testimonial'; // Import the Testimonial section
 import BlogDetail from './pages/BlogDetail';
+import ScrollToTopButton from './components/ScrollToTopButton.tsx';
+
 
 function App() {
   return (
@@ -47,6 +49,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetail />} />  
         </Routes>
         <Footer />
+        <ScrollToTopButton /> {/* Add the ScrollToTopButton */}
       </div>
     </Router>
   );
