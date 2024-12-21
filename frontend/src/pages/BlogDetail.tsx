@@ -15,7 +15,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('https://fin-test-2m8d.vercel.app/api/blog/${id}'); // Fetch all blogs
+        const response = await axios.get(`https://fin-test-2m8d.vercel.app/api/blog/${id}`); // Fetch blog by ID
         const { blogs } = response.data; // Extract the blogs array from the response
 
         if (Array.isArray(blogs)) {
