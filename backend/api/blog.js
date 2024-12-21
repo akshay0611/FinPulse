@@ -35,11 +35,26 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
-    try {
-      const blogs = await Blog.find();
-      res.status(200).json({ blogs });
-    } catch (error) {
-      res.status(500).json({ message: 'Error fetching blogs' });
+    // If the request includes an ID parameter
+    if (req.query.id) {
+      try {
+        const blog = await Blog.findById(req.query.id); // Fetch blog by ID
+        if (blog) {
+          res.status(200).json({ blog });
+        } else {
+          res.status(404).json({ message: 'Blog not found' });
+        }
+      } catch (error) {
+        res.status(500).json({ message: 'Error fetching blog by ID' });
+      }
+    } else {
+      // If no ID parameter, fetch all blogs
+      try {
+        const blogs = await Blog.find();
+        res.status(200).json({ blogs });
+      } catch (error) {
+        res.status(500).json({ message: 'Error fetching blogs' });
+      }
     }
   } else {
     res.status(405).json({ message: 'Method not allowed' });

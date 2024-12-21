@@ -13,37 +13,41 @@ const BlogDetail = () => {
   const navigate = useNavigate(); // For navigation
 
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchBlog = async () => {
       try {
-        const response = await axios.get(`https://fin-test-2m8d.vercel.app/api/blog/${id}`); // Fetch blog by ID
-        const { blogs } = response.data; // Extract the blogs array from the response
-
-        if (Array.isArray(blogs)) {
-          setAllBlogs(blogs);
-
-          // Find the current blog index
-          const currentIndex = blogs.findIndex((blog: any) => blog._id === id);
-          if (currentIndex !== -1) {
-            setBlog(blogs[currentIndex]);
-
-            // Set IDs for previous and next blogs
-            setPrevBlogId(currentIndex > 0 ? blogs[currentIndex - 1]._id : null);
-            setNextBlogId(currentIndex < blogs.length - 1 ? blogs[currentIndex + 1]._id : null);
-          } else {
-            console.error('Blog not found in the list');
-          }
+        // Fetch the current blog by ID
+        const response = await axios.get(`https://fin-test-2m8d.vercel.app/api/blog?id=${id}`);
+        const blogData = response.data.blog;
+        
+        if (blogData) {
+          setBlog(blogData);
+          // Set IDs for previous and next blogs
+          const currentIndex = allBlogs.findIndex(b => b._id === id);
+          setPrevBlogId(allBlogs[currentIndex - 1]?._id || null); // Set previous blog ID
+          setNextBlogId(allBlogs[currentIndex + 1]?._id || null); // Set next blog ID
         } else {
-          console.error('Unexpected blogs format:', blogs);
+          console.error('Blog not found');
         }
       } catch (error) {
-        console.error('Error fetching blogs:', error);
+        console.error('Error fetching blog:', error);
       }
     };
 
+    const fetchAllBlogs = async () => {
+      try {
+        // Fetch all blogs to determine the next/previous blog
+        const response = await axios.get('https://fin-test-2m8d.vercel.app/api/blog');
+        setAllBlogs(response.data.blogs); // Store all blogs
+      } catch (error) {
+        console.error('Error fetching all blogs:', error);
+      }
+    };
+
+    fetchAllBlogs();
     if (id) {
-      fetchBlogs();
+      fetchBlog();
     }
-  }, [id]);
+  }, [id, allBlogs]); // Re-run when allBlogs changes
 
   const handleNavigation = (blogId: string | null) => {
     if (blogId) {
