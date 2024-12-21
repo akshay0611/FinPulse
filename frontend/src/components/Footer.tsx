@@ -91,9 +91,20 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social Media and Translation */}
+          {/* Location, Email, Phone, Social Media, and Translation */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect with Us</h3>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-2 text-gray-400 mb-6">
+              <li>
+                <strong>Location:</strong> 1234 Finance Street, City, Country
+              </li>
+              <li>
+                <strong>Email:</strong> <a href="mailto:info@finpulse.com" className="hover:text-[#e341ff]">info@finpulse.com</a>
+              </li>
+              <li>
+                <strong>Phone:</strong> +123 456 7890
+              </li>
+            </ul>
             <div className="flex space-x-4 mb-6">
               <a href="#" className="hover:text-[#e341ff]">
                 <Rss />
@@ -112,6 +123,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
           <p>© 2024 FinPulse. All Rights Reserved.</p>
+          <p>Made with ♥ by Akshay</p>
         </div>
       </div>
     </footer>
