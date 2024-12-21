@@ -96,77 +96,86 @@ const Investments = () => {
   ];
 
   return (
-    <div className="bg-gray-100 min-h-screen relative">
+    <div className="bg-gradient-to-b from-indigo-50 to-white min-h-screen relative">
       <Navbar />
-      <section className="py-16 px-6 mt-20 relative overflow-visible">
+      <section className="py-32 px-6 mt-16 relative z-10">
         <div className="max-w-7xl mx-auto space-y-32">
-          <section className="py-12 px-6 bg-white relative">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
+          {/* Hero Section */}
+          <section className="bg-white shadow-2xl rounded-3xl py-24 px-14 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
               {/* Image Section */}
-              <div className="lg:w-1/2 w-full flex justify-center">
+              <div className="lg:w-1/2 w-full flex justify-center relative mb-12 lg:mb-0">
                 <img
                   src="https://cdn.fundsindia.com/prelogin/products-image.webp?auto=format&fit=max&w=1080"
                   alt="Investment Ideas Overview"
-                  className="rounded-2xl shadow-lg w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
+                  className="rounded-3xl shadow-2xl w-full h-96 object-cover transition-all duration-500 transform hover:scale-105 hover:rotate-2 hover:opacity-80"
                 />
               </div>
-
+  
               {/* Text Section */}
-              <div className="lg:w-1/2 w-full mt-8 lg:mt-0 text-left lg:pl-10">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">Investment Ideas</h2>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Explore various investment options and understand their features. Each type offers distinct benefits and is suited for different financial goals.
+              <div className="lg:w-1/2 w-full text-left lg:pl-20">
+                <h2 className="text-5xl font-extrabold text-gray-800 mb-8 leading-tight tracking-wide transition-all duration-500 hover:text-teal-500">
+                  Investment Ideas to Empower Your Financial Journey
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed tracking-wide max-w-lg">
+                  Explore a wide range of investment options tailored to suit your financial goals. Discover the best strategies and insights for your future.
                 </p>
+                <button className="bg-gradient-to-r from-teal-500 to-blue-500 text-white px-8 py-4 rounded-full shadow-xl transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300 hover:bg-teal-600">
+                  Start Exploring
+                </button>
               </div>
             </div>
           </section>
-
+  
+          {/* Investment Ideas Sections */}
           {investmentIdeas.map((investment, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row items-center bg-gradient-to-br from-green-50 to-gray-50 rounded-2xl shadow-lg relative z-10 ${
+              className={`flex flex-col lg:flex-row items-center bg-gradient-to-br from-indigo-50 via-gray-100 to-white rounded-2xl shadow-2xl overflow-hidden mb-16 transform hover:scale-105 transition-all duration-500 ${
                 index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
               }`}
             >
-              {/* Image Container */}
-              <div className="lg:w-1/2 w-full flex justify-center relative -mt-12 z-20">
-                <div className="rounded-xl overflow-hidden shadow-lg">
+              {/* Image Section */}
+              <div className="lg:w-1/2 w-full flex justify-center relative">
+                <div className="rounded-xl overflow-hidden shadow-xl transform hover:scale-110 transition-all duration-500">
                   <img
                     src={investment.image}
                     alt={investment.title}
-                    className="object-cover w-full h-80 rounded-2xl hover:scale-105 transition-transform duration-300"
+                    className="object-cover w-full h-80 rounded-2xl"
                   />
                 </div>
               </div>
-
+  
               {/* Content Section */}
-              <div className="lg:w-1/2 w-full text-left p-6 lg:p-10">
-                <h1 className="text-3xl font-bold text-gray-800 mb-4">
-                  {investment.title}
-                </h1>
-                <p className="text-gray-600 mb-6">{investment.description}</p>
-                <ul className="space-y-3 mb-8">
+              <div className="lg:w-1/2 w-full text-left p-8 lg:p-16">
+                <h1 className="text-3xl font-semibold text-gray-800 mb-6 transition-all duration-500 hover:text-teal-600">{investment.title}</h1>
+                <p className="text-lg text-gray-700 mb-6">{investment.description}</p>
+                <ul className="space-y-4 mb-8">
                   {investment.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center">
-                      <span className="w-3 h-3 bg-emerald-400 rounded-full mr-2"></span>
-                      <span className="text-gray-700">{feature}</span>
+                    <li key={idx} className="flex items-center text-lg text-gray-700">
+                      <span className="w-4 h-4 bg-emerald-500 rounded-full mr-4"></span>
+                      {feature}
                     </li>
                   ))}
                 </ul>
+                <button className="bg-gradient-to-r from-teal-500 to-green-400 text-white px-8 py-4 rounded-full shadow-xl transform hover:scale-105 transition duration-300 focus:outline-none focus:ring-4 focus:ring-teal-300 hover:bg-teal-600">
+                  Explore Investment
+                </button>
               </div>
             </div>
           ))}
+  
         </div>
-
+  
         {/* Decorative Curved Lines */}
         <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
           <svg
-            className="w-full h-32"
+            className="w-full h-40"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
           >
             <path
-              fill="#3B82F6"
+              fill="#38BDF8"
               fillOpacity="0.1"
               d="M0,192L120,213.3C240,235,480,277,720,282.7C960,288,1200,256,1320,240L1440,224L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
             ></path>
@@ -175,6 +184,8 @@ const Investments = () => {
       </section>
     </div>
   );
+  
+  
 };
 
 export default Investments;
