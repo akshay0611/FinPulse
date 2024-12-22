@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Rss, Twitter, Facebook } from 'lucide-react';
+import { Rss, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import GoogleTranslate from './GoogleTranslate';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-
   return (
     <footer className="bg-[#1a0f2e] text-white py-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -31,9 +29,23 @@ const Footer = () => {
               </svg>
               <h2 className="text-2xl font-bold">FinPulse</h2>
             </div>
-            <p className="text-gray-400">
+            <p className="text-gray-400 mb-4">
               Your trusted companion for financial guidance and investment strategies.
             </p>
+            <div className="flex space-x-4">
+              <Link to="#" className="hover:text-emerald-500">
+                <Facebook className="h-5 w-5" />
+              </Link>
+              <Link to="#" className="hover:text-emerald-500">
+                <Twitter className="h-5 w-5" />
+              </Link>
+              <Link to="#" className="hover:text-emerald-500">
+                <Instagram className="h-5 w-5" />
+              </Link>
+              <Link to="#" className="hover:text-emerald-500">
+                <Linkedin className="h-5 w-5" />
+              </Link>
+            </div>
           </div>
 
           {/* Navigation Links */}
@@ -43,6 +55,11 @@ const Footer = () => {
               <li>
                 <Link to="/about" className="hover:text-[#e341ff]">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-[#e341ff]">
+                  Contact
                 </Link>
               </li>
               <li>
@@ -60,65 +77,68 @@ const Footer = () => {
                   FAQ
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Resources Section */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Resources</h3>
+            <ul className="space-y-2 text-gray-400">
               <li>
-                <Link to="/contact" className="hover:text-[#e341ff]">
-                  Contact Us
+                <Link to="/blog" className="hover:text-[#e341ff]">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/news" className="hover:text-[#e341ff]">
+                  News
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides" className="hover:text-[#e341ff]">
+                  Guides
+                </Link>
+              </li>
+              <li>
+                <Link to="/help-center" className="hover:text-[#e341ff]">
+                  Help Center
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter Subscription */}
+          {/* Legal Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Subscribe</h3>
-            <p className="text-gray-400 mb-6">
-              Stay updated with daily financial news, market insights, and investment strategies.
-            </p>
-            <div className="relative">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="w-full py-3 px-4 rounded-lg border border-gray-600 bg-[#1a0f2e] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#10b981] pr-28"
-              />
-              <button
-                onClick={() => alert(`Signed up with: ${email}`)}
-                className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#10b981] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#059669] transition duration-300"
-              >
-                Sign Up
-              </button>
-            </div>
-          </div>
-
-          {/* Location, Email, Phone, Social Media, and Translation */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-gray-400 mb-6">
+            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2 text-gray-400">
               <li>
-                <strong>Location:</strong> 1234 Finance Street, City, Country
+                <Link to="/privacy-policy" className="hover:text-[#e341ff]">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <strong>Email:</strong> <a href="mailto:info@finpulse.com" className="hover:text-[#e341ff]">info@finpulse.com</a>
+                <Link to="/terms-of-service" className="hover:text-[#e341ff]">
+                  Terms of Service
+                </Link>
               </li>
               <li>
-                <strong>Phone:</strong> +123 456 7890
+                <Link to="/cookie-policy" className="hover:text-[#e341ff]">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/disclaimer" className="hover:text-[#e341ff]">
+                  Disclaimer
+                </Link>
               </li>
             </ul>
-            <div className="flex space-x-4 mb-6">
-              <a href="#" className="hover:text-[#e341ff]">
-                <Rss />
-              </a>
-              <a href="#" className="hover:text-[#e341ff]">
-                <Twitter />
-              </a>
-              <a href="#" className="hover:text-[#e341ff]">
-                <Facebook />
-              </a>
-            </div>
-            <GoogleTranslate />
           </div>
         </div>
+
+        <div className="mt-4 flex justify-end">
+  <GoogleTranslate />
+</div>
+
 
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
