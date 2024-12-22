@@ -20,7 +20,9 @@ import Testimonial from './components/Testimonial'; // Import the Testimonial se
 import BlogDetail from './pages/BlogDetail';
 import ScrollToTopButton from './components/ScrollToTopButton.tsx';
 import MarketPulse from './pages/MarketPulse'; // Import the Market Pulse page
-
+import Careers from './pages/Careers'; // adjust the import path if necessary
+import Press from './pages/Press'; 
+import Guides from './pages/Guides'; 
 
 function App() {
   return (
@@ -49,6 +51,9 @@ function App() {
           <Route path="/schemes" element={<Schemes />} />
           <Route path="/blog/:id" element={<BlogDetail />} />  
           <Route path="/market-pulse" element={<MarketPulse />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/press" element={<Press />} />
+          <Route path="/guides" element={<Guides />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> {/* Add the ScrollToTopButton */}
