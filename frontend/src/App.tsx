@@ -8,7 +8,6 @@ import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import GovernmentSchemesSection from './components/GovernmentSchemesSection';
 import About from './pages/About'; 
-import FAQ from './pages/FAQ';
 import Contact from './pages/Contact'; // Import the Contact page
 import Investments from './pages/Investments'; // Import the Investments page
 import Blog from './pages/Blog'; 
@@ -23,6 +22,11 @@ import MarketPulse from './pages/MarketPulse'; // Import the Market Pulse page
 import Careers from './pages/Careers'; // adjust the import path if necessary
 import Press from './pages/Press'; 
 import Guides from './pages/Guides'; 
+import HelpCenter from './pages/HelpCenter';
+import PrivacyPolicy from './pages/Privacy-Policy';
+import TermsOfService from './pages/Terms-Of-Service';
+import CookiePolicy from './pages/Cookie-Policy';
+import Disclaimer from './pages/Disclaimer';
 
 function App() {
   return (
@@ -42,7 +46,6 @@ function App() {
             </>
           } />
           <Route path="/about" element={<About />} /> 
-          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} /> 
           <Route path="/blog" element={<Blog />} />
           <Route path="/investments" element={<Investments />} />
@@ -54,9 +57,14 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/press" element={<Press />} />
           <Route path="/guides" element={<Guides />} />
+          <Route path="/helpcenter" element={<HelpCenter />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
         <Footer />
-        <ScrollToTopButton /> {/* Add the ScrollToTopButton */}
+        <ScrollToTopButton /> 
       </div>
     </Router>
   );

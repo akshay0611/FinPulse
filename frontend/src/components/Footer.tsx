@@ -11,24 +11,25 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div>
-            <div className="flex items-center mb-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="rgb(52, 211, 153)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mr-2"
-              >
-                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-                <polyline points="16 7 22 7 22 13"></polyline>
-              </svg>
-              <h2 className="text-2xl font-bold">FinPulse</h2>
-            </div>
+<a href="/" className="flex items-center mb-4">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="rgb(52, 211, 153)"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="mr-2"
+  >
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+    <polyline points="16 7 22 7 22 13"></polyline>
+  </svg>
+  <h2 className="text-2xl font-bold">FinPulse</h2>
+</a>
+
             <p className="text-gray-400 mb-4">
               Your trusted companion for financial guidance and investment strategies.
             </p>
@@ -95,7 +96,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/help-center" className="hover:text-[#e341ff]">
+                <Link to="/helpcenter" className="hover:text-[#e341ff]">
                   Help Center
                 </Link>
               </li>

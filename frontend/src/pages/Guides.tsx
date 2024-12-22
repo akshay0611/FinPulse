@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { ArrowRight, Search, BookOpen, Lightbulb, TrendingUp } from 'lucide-react';
 
@@ -12,6 +12,14 @@ const guides = [
 ]
 
 export default function GuidesPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  // Filter guides based on the search query
+  const filteredGuides = guides.filter(guide =>
+    guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    guide.category.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -25,6 +33,8 @@ export default function GuidesPage() {
                 <input
                   type="text"
                   placeholder="Search guides..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
                 />
                 <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-300" />
@@ -36,7 +46,7 @@ export default function GuidesPage() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {guides.map((guide, index) => (
+              {filteredGuides.map((guide, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                   <div className="mb-4">
                     <guide.icon className="w-10 h-10 text-purple-600 mb-4" />
