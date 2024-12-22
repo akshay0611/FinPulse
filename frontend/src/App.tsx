@@ -65,6 +65,7 @@ function App() {
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
+        <script src="//code.tidio.co/snqg1sznczddvbcg672woymqu6wjywdb.js" async></script>
       </div>
     </Router>
   );
