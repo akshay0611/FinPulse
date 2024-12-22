@@ -19,6 +19,7 @@ import WhyChooseUs from './components/WhyChooseUs'; // Import the new component
 import Testimonial from './components/Testimonial'; // Import the Testimonial section
 import BlogDetail from './pages/BlogDetail';
 import ScrollToTopButton from './components/ScrollToTopButton.tsx';
+import MarketPulse from './pages/MarketPulse'; // Import the Market Pulse page
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/schemes" element={<Schemes />} />
           <Route path="/blog/:id" element={<BlogDetail />} />  
+          <Route path="/market-pulse" element={<MarketPulse />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> {/* Add the ScrollToTopButton */}
