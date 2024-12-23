@@ -29,11 +29,13 @@ import CookiePolicy from './pages/Cookie-Policy';
 import Disclaimer from './pages/Disclaimer';
 import Courses from './pages/Courses';
 import Quiz from './pages/Quiz';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
+        <Analytics /> 
         <Navbar />
         <Routes>
           <Route path="/" element={
