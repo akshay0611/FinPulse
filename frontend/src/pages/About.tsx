@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { CheckCircle, Linkedin, Users, TrendingUp, Award, Globe } from 'lucide-react';
-import Flag from 'react-world-flags';
 
 const teamMembers = [
   { name: 'Akshay Kumar', role: 'Director', image: '/placeholder.svg', linkedin: '#' },
@@ -178,7 +177,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-       {/* Global Presence Section */}
+{/* Global Presence Section */}
 <section className="py-16 bg-gray-50">
   <div className="container mx-auto px-4">
     <h2 className="text-3xl font-bold mb-12 text-center">Our Global Presence</h2>
@@ -191,18 +190,18 @@ export default function AboutPage() {
       <p className="text-lg mb-6">
         FinPulse is proud to serve users across 5 countries, providing localized financial insights and empowering global financial decisions.
       </p>
-      
+
       <div className="flex justify-center space-x-4">
-        {['IN', 'US', 'GB', 'SG', 'AU'].map((countryCode, index) => (
-          <div key={index} className="flex items-center space-x-2 px-4 py-2 bg-purple-100 text-purple-600 rounded-full">
-            <Flag code={countryCode} className="w-6 h-6" />
-            <span>{['India', 'USA', 'UK', 'Singapore', 'Australia'][index]}</span>
-          </div>
+        {['India', 'USA', 'UK', 'Singapore', 'Australia'].map((country, index) => (
+          <span key={index} className="px-4 py-2 bg-purple-100 text-purple-600 rounded-full">
+            {country}
+          </span>
         ))}
       </div>
     </div>
   </div>
 </section>
+
       </main>
     </div>
   );
