@@ -36,7 +36,7 @@ const Schemes = () => {
   useEffect(() => {
     const fetchSchemes = async () => {
       try {
-        const response = await fetch('https://fin-test-2m8d.vercel.app/api/schemes');
+        const response = await fetch('https://finpulsebackend.vercel.app/api/schemes');
         if (!response.ok) {
           throw new Error('Failed to fetch schemes');
         }

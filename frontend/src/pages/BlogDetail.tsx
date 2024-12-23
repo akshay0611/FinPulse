@@ -16,7 +16,7 @@ const BlogDetail = () => {
     const fetchBlog = async () => {
       try {
         // Fetch the current blog by ID
-        const response = await axios.get(`https://fin-test-2m8d.vercel.app/api/blog?id=${id}`);
+        const response = await axios.get(`https://finpulsebackend.vercel.app/api/blog?id=${id}`);
         const blogData = response.data.blog;
         
         if (blogData) {
@@ -36,7 +36,7 @@ const BlogDetail = () => {
     const fetchAllBlogs = async () => {
       try {
         // Fetch all blogs to determine the next/previous blog
-        const response = await axios.get('https://fin-test-2m8d.vercel.app/api/blog');
+        const response = await axios.get('https://finpulsebackend.vercel.app/api/blog');
         setAllBlogs(response.data.blogs); // Store all blogs
       } catch (error) {
         console.error('Error fetching all blogs:', error);

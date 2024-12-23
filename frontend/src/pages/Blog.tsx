@@ -13,7 +13,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('https://fin-test-2m8d.vercel.app/api/blog');
+        const response = await axios.get('https://finpulsebackend.vercel.app/api/blog');
         if (response.data && Array.isArray(response.data.blogs)) {
           setBlogs(response.data.blogs);
           setFilteredBlogs(response.data.blogs);  // Set the initial blogs as filteredBlogs
