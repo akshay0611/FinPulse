@@ -1,16 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, TrendingUp, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen(prevState => !prevState);
   };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (menuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [menuOpen]);
 
   return (
     <nav className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-4 px-6 flex items-center justify-between fixed w-full top-0 z-50 transition-all duration-300 ease-in-out">
+      {/* Hamburger Menu for Mobile */}
+      <div className="lg:hidden flex items-center">
+        <button onClick={toggleMenu} aria-label="Toggle menu" className="focus:outline-none focus:ring-2 focus:ring-emerald-400">
+          {menuOpen ? (
+            <X className="h-6 w-6 text-white" />
+          ) : (
+            <Menu className="h-6 w-6 text-white" />
+          )}
+        </button>
+      </div>
+
       <div className="flex items-center gap-2">
         <Link to="/" className="flex items-center gap-2">
           <TrendingUp className="h-6 w-6 text-emerald-400" />
@@ -30,19 +56,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Hamburger Menu for Mobile */}
-      <div className="lg:hidden flex items-center">
-        <button onClick={toggleMenu}>
-          {menuOpen ? (
-            <X className="h-6 w-6 text-white" />
-          ) : (
-            <Menu className="h-6 w-6 text-white" />
-          )}
-        </button>
-      </div>
-
       {/* Menu items */}
-      <div className={`lg:flex items-center space-x-6 ${menuOpen ? 'block' : 'hidden'} lg:block transition-all duration-300 ease-in-out`}>
+      <div ref={menuRef} className={`navbar-menu fixed top-0 left-0 h-full bg-indigo-900 z-40 transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:static lg:flex lg:items-center lg:space-x-6 lg:translate-x-0 lg:bg-transparent`}>
         <div className={`flex flex-col lg:flex-row ${menuOpen ? 'space-y-4 lg:space-y-0 lg:space-x-6' : 'space-x-6'}`}>
           <Link to="/about" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">About</Link>
           <Link to="/news" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">News</Link>
