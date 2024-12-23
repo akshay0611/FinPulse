@@ -29,7 +29,7 @@ import CookiePolicy from './pages/Cookie-Policy';
 import Disclaimer from './pages/Disclaimer';
 import Courses from './pages/Courses';
 import Quiz from './pages/Quiz';
-import Dashboard from './pages/Dashboard';
+
 function App() {
   return (
     <Router>
@@ -66,7 +66,7 @@ function App() {
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/quiz" element={<Quiz />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+         
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
