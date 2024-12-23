@@ -1,10 +1,9 @@
 {
     "cleanUrls": true,
-    "redirects": [
+    "rewrites": [
       {
         "source": "/:path*",
-        "destination": "/",
-        "permanent": false
+        "destination": "/"
       }
     ]
   }
