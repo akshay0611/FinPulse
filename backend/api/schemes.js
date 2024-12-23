@@ -23,7 +23,7 @@ const Scheme = mongoose.model('Scheme', schemeSchema);
 
 export default async function handler(req, res) {
   // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://fin-test-sooty.vercel.app'); // Allow the frontend origin
+  res.setHeader('Access-Control-Allow-Origin', 'https://fin-pulse.vercel.app'); // Allow the frontend origin
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
