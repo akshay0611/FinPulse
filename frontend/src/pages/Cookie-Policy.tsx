@@ -1,17 +1,27 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CookiePolicyPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow bg-gray-50">
-        <section className="py-20 bg-purple-700 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Cookie Policy</h1>
-            <p className="text-lg md:text-xl">Last updated: December 21, 2024</p>
-          </div>
-        </section>
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 text-center relative z-10 mt-12"
+  >
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">Cookie Policy</h1>
+    <p className="text-xl mb-8">
+      Last updated: December 21, 2024
+    </p>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+</section>
 
         <section className="py-16">
           <div className="container mx-auto px-4">

@@ -89,12 +89,22 @@ export default function QuizPage() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
       <main className="flex-grow">
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Financial Literacy Quiz</h1>
-            <p className="text-xl mb-8">Test your knowledge of finance and investment concepts.</p>
-          </div>
-        </section>
+
+<section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10 mt-12"  
+  >
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">Financial Literacy Quiz</h1>
+    <p className="text-xl mb-8 max-w-3xl">
+    Test your knowledge of finance and investment concepts.
+    </p>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+</section> 
 
         <section className="py-16">
           <div className="container mx-auto px-4">

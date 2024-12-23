@@ -3,13 +3,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { ChevronRight, PiggyBank, TrendingUp, Building, Landmark, ArrowRightLeft, Calendar, Wallet, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const investmentTypes = [
   {
     title: "Mutual Funds",
     icon: PiggyBank,
     description: "Mutual Funds pool money from multiple investors to invest in a diversified portfolio of stocks, bonds, or other securities.",
-    link: "/mutual-funds",
+    link: "#",
     category: "Popular",
     features: [
       "Diversification: Mutual funds allow investors to own a small portion of a wide variety of assets.",
@@ -21,7 +22,7 @@ const investmentTypes = [
     title: "Stocks",
     icon: TrendingUp,
     description: "Investing in stocks means buying shares of ownership in a company. It offers potential returns through capital appreciation and dividends.",
-    link: "/stocks",
+    link: "#",
     category: "Popular",
     features: [
       "Ownership: Stockholders are part-owners of the company, with voting rights on certain company matters.",
@@ -33,7 +34,7 @@ const investmentTypes = [
     title: "Corporate Fixed Deposits",
     icon: Building,
     description: "Corporate Fixed Deposits (FDs) are term deposits offered by companies, providing a fixed rate of return over a specific period.",
-    link: "/corporate-fixed-deposits",
+    link: "#",
     category: "Fixed Income",
     features: [
       "Fixed Returns: Corporate FDs offer fixed interest rates, providing predictable returns.",
@@ -45,7 +46,7 @@ const investmentTypes = [
     title: "NPS (National Pension System)",
     icon: Landmark,
     description: "The National Pension System (NPS) is a government-sponsored pension scheme designed to help individuals build a retirement corpus.",
-    link: "/nps",
+    link: "#",
     category: "Systematic",
     features: [
       "Tax Benefits: NPS offers tax deductions under section 80C and additional deductions for retirement savings.",
@@ -57,7 +58,7 @@ const investmentTypes = [
     title: "Systematic Transfer Plan (STP)",
     icon: ArrowRightLeft,
     description: "A Systematic Transfer Plan (STP) allows investors to transfer a fixed amount from one mutual fund to another at regular intervals.",
-    link: "/stp",
+    link: "#",
     category: "Systematic",
     features: [
       "Automated Transfers: Transfers occur automatically, allowing for regular fund allocation adjustments.",
@@ -69,7 +70,7 @@ const investmentTypes = [
     title: "Systematic Investment Plan (SIP)",
     icon: Calendar,
     description: "A Systematic Investment Plan (SIP) allows investors to invest a fixed amount regularly in mutual funds.",
-    link: "/sip",
+    link: "#",
     category: "Systematic",
     features: [
       "Regular Contributions: Investors contribute fixed amounts regularly, making investing easy and consistent.",
@@ -81,7 +82,7 @@ const investmentTypes = [
     title: "Auto Sweep Account",
     icon: Wallet,
     description: "An Auto Sweep Account is a high-interest savings account where excess funds are automatically transferred into Fixed Deposits.",
-    link: "/auto-sweep-account",
+    link: "#",
     category: "Fixed Income",
     features: [
       "Higher Interest: Earn more on your savings by automatically transferring excess funds into Fixed Deposits.",
@@ -94,7 +95,7 @@ const investmentTypes = [
     title: "Insurance",
     icon: Shield,
     description: "Insurance provides a safety net in case of emergencies. From life insurance to health insurance, it helps mitigate risks.",
-    link: "/insurance",
+    link: "#",
     category: "Protection",
     features: [
       "Risk Mitigation: Insurance policies help manage financial risks from life events or health emergencies.",
@@ -115,20 +116,30 @@ export default function InvestmentsPage() {
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       <main className="flex-grow">
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Investment Ideas Overview</h1>
-            <p className="text-xl mb-8 max-w-2xl">
-              Investment Ideas to Empower Your Financial Journey. Explore a wide range of investment options tailored to suit your financial goals. Discover the best strategies and insights for your future.
-            </p>
-            <a href="#">
-              <button className="px-6 py-3 text-lg font-semibold text-purple-600 bg-white rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 flex items-center">
-                Start Exploring
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </button>
-            </a>
-          </div>
-        </section>
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10"
+  >
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">Investment Ideas Overview</h1>
+    <p className="text-xl mb-8 max-w-3xl">
+      Investment Ideas to Empower Your Financial Journey. Explore a wide range of investment options tailored to suit your financial goals. Discover the best strategies and insights for your future.
+    </p>
+    <a href="#">
+      <button className="px-6 py-3 text-lg font-semibold text-purple-600 bg-white rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 flex items-center">
+        Start Exploring
+        <ChevronRight className="ml-2 h-4 w-4" />
+      </button>
+    </a>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+</section>
+
+
+
 
         <section className="py-16">
           <div className="container mx-auto px-4">

@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,12 +42,21 @@ const Contact = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-purple-900 to-purple-800 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl mb-8">We'd love to assist you! Feel free to reach out for any questions or support.</p>
-          </div>
-        </section>
+<section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10 mt-12"  
+  >
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
+    <p className="text-xl mb-8 max-w-3xl">
+    We'd love to assist you! Feel free to reach out for any questions or support.
+    </p>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+</section> 
 
         {/* Contact Form and Info Section */}
         <section className="py-16">

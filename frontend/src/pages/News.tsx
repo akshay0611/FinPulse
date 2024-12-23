@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar'; // Adjust the path as necessary
 import Footer from '../components/Footer'; // Adjust the path as necessary
 import { Search } from 'lucide-react'; // Import Search icon
+import { motion, AnimatePresence } from 'framer-motion';
 
 const API_KEY = import.meta.env.VITE_API_KEY_2;
 const API_URL = `https://gnews.io/api/v4/top-headlines?topic=business&country=in&lang=en&apikey=${API_KEY}&max=10`;
@@ -50,24 +51,35 @@ const News = () => {
       <Navbar />
 
       <main className="flex-grow">
-        <section className="py-20 bg-gradient-to-b from-purple-900 to-purple-800 text-white">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Latest Financial News</h1>
-            <p className="text-xl mb-8">Stay informed with the latest updates from the world of finance.</p>
-            <div className="max-w-md mx-auto">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search news..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-                />
-                <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-300" />
-              </div>
-            </div>
-          </div>
-        </section>
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10"
+  >
+    <div className="mb-10"></div> {/* Added space above */}
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">Latest Financial News</h1>
+    <p className="text-xl mb-8 max-w-3xl">
+      Stay informed with the latest updates from the world of finance.
+    </p>
+    <div className="max-w-md mx-auto">
+      <div className="relative">
+        <input
+          type="text"
+          placeholder="Search news..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full pl-10 pr-4 py-2 rounded-lg bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        />
+        <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-300" />
+      </div>
+    </div>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+</section>
+
 
         <section className="py-16">
           <div className="container mx-auto px-4">
