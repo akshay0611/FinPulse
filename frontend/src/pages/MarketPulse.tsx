@@ -5,6 +5,7 @@ import { Heatmap } from '../components/heatmap';
 import { Tickers } from '../components/tickers';
 import { InteractiveCharts } from '../components/interactive-charts';
 import { EconomicCalendar } from '../components/economic-calendar';
+import { motion } from 'framer-motion';
 
 export default function MarketPulsePage() {
   return (
@@ -12,14 +13,21 @@ export default function MarketPulsePage() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-purple-900 to-purple-800 text-white shadow-lg">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Market Pulse</h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Stay updated with real-time market insights, sector performance, and economic trends.
-            </p>
-          </div>
-        </section>
+<section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden shadow-lg">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10 mt-12"
+  >
+    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">Market Pulse</h1>
+    <p className="text-xl mb-8 max-w-3xl">
+      Stay updated with real-time market insights, sector performance, and economic trends.
+    </p>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+</section>
 
         {/* Content Sections */}
         <section className="py-16">
