@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
+import { motion } from 'framer-motion';
 
 type Scheme = {
   title: string;
@@ -58,21 +59,27 @@ const Schemes = () => {
     <div className="bg-[#f8f9fa]">
       <Navbar />
 
-      <main className="flex-grow">
-        {/* Section for Blog Introduction */}
-        <section className="mt-12 py-16 bg-gradient-to-b from-blue-600 to-purple-600 text-white">
-  <div className="container mx-auto px-6">
-    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Available Schemes</h1>
-    <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+<main className="flex-grow">
+<section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10 mt-12"  
+  >
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">Available Schemes</h1>
+    <p className="text-xl mb-8 max-w-3xl">
       Discover a variety of schemes across categories to find the best options for your needs.
     </p>
-  </div>
+  </motion.div>
+  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
 </section>
 
 
 
         {/* Dropdown for Category Selection */}
-        <div className="container mx-auto px-6 mt-12">
+        <div className="container mx-auto px-6 mt-3">
           <div className="flex justify-between items-center">
             <label htmlFor="category" className="text-lg font-semibold text-gray-700">
               Filter by Category:
