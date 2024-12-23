@@ -108,12 +108,12 @@ export default function QuizPage() {
 
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg">
+            <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
-                <h2 className="text-2xl mb-2">
+                <h2 className="text-2xl mb-2 text-indigo-600 font-semibold">
                   {quizCompleted ? "Quiz Completed!" : `Question ${currentQuestion + 1} of ${quizQuestions.length}`}
                 </h2>
-                <p className="mb-4">
+                <p className="mb-4 text-gray-700">
                   {quizCompleted ? "Here's your result:" : "Select the best answer:"}
                 </p>
                 <AnimatePresence mode="wait">
@@ -124,7 +124,7 @@ export default function QuizPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <p className="text-3xl font-bold text-center mb-4">
+                      <p className="text-3xl font-bold text-center mb-4 text-green-600">
                         Your Score: {score} / {quizQuestions.length}
                       </p>
                       <p className="text-center text-gray-600">
@@ -142,7 +142,7 @@ export default function QuizPage() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                     >
-                      <p className="text-lg mb-4">{quizQuestions[currentQuestion].question}</p>
+                      <p className="text-lg mb-4 text-gray-800">{quizQuestions[currentQuestion].question}</p>
                       <div className="space-y-4">
                         {quizQuestions[currentQuestion].options.map((option, index) => (
                           <div key={index} className="flex items-center space-x-2">
@@ -155,7 +155,7 @@ export default function QuizPage() {
                               onChange={() => handleAnswerSelection(index)}
                               className="h-4 w-4 text-indigo-600 focus:ring-indigo-500"
                             />
-                            <label htmlFor={`option-${index}`} className="text-lg">{option}</label>
+                            <label htmlFor={`option-${index}`} className="text-lg text-gray-700">{option}</label>
                           </div>
                         ))}
                       </div>
