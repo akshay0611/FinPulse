@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { FaQuoteLeft } from 'react-icons/fa'; // Importing quote icon
 
-const Rating = ({ rating }) => {
+interface RatingProps {
+  rating: number;
+}
+
+const Rating = ({ rating }: RatingProps) => {
   return (
     <div className="mb-4 flex justify-center space-x-1" aria-label={`Rating: ${rating} out of 5`}>
       {Array.from({ length: 5 }).map((_, index) => (
@@ -67,7 +72,7 @@ const Testimonial = () => {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  const handleChangeTestimonial = (index) => {
+  const handleChangeTestimonial = (index: number) => {
     setCurrentTestimonial(index);
   };
 
@@ -103,6 +108,9 @@ const Testimonial = () => {
                 style={{ width: '120px', height: '120px' }} // Custom image size
                 loading="lazy"
               />
+            </div>
+            <div className="flex justify-center mb-6">
+              <FaQuoteLeft className="text-[#4ade80] text-3xl" />
             </div>
             <p className="text-xl italic text-[#4b5563] mb-6">
               "{testimonials[currentTestimonial].message}"
