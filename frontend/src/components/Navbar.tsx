@@ -50,6 +50,7 @@ const Navbar = () => {
           <Link to="/investments" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Investments</Link>
           <Link to="/blog" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Blogs</Link>
           <Link to="/market-pulse" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Market Pulse</Link>
+          <Link to="/courses" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Courses</Link>
           <Link to="/signin-signup">
             <button className="bg-emerald-400 px-3 py-1.5 rounded-lg text-white-200 font-bold hover:bg-emerald-500 transition-all duration-200 ease-in-out">
               Sign In / Sign Up

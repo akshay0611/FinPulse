@@ -27,6 +27,7 @@ import PrivacyPolicy from './pages/Privacy-Policy';
 import TermsOfService from './pages/Terms-Of-Service';
 import CookiePolicy from './pages/Cookie-Policy';
 import Disclaimer from './pages/Disclaimer';
+import Courses from './pages/Courses';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/courses" element={<Courses />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
