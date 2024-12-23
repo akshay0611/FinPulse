@@ -1,9 +1,19 @@
 {
+    "builds": [
+      {
+        "src": "frontend/dist/**",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "frontend/index.html",
+        "use": "@vercel/static"
+      }
+    ],
     "cleanUrls": true,
     "rewrites": [
       {
         "source": "/:path*",
-        "destination": "/"
+        "destination": "/frontend/index.html"
       }
     ]
   }
