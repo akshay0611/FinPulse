@@ -28,6 +28,7 @@ import TermsOfService from './pages/Terms-Of-Service';
 import CookiePolicy from './pages/Cookie-Policy';
 import Disclaimer from './pages/Disclaimer';
 import Courses from './pages/Courses';
+import Quiz from './pages/Quiz';
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
