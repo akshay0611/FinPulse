@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
 export function SavingsCalculator() {
   const [principal, setPrincipal] = useState('');
@@ -16,13 +15,6 @@ export function SavingsCalculator() {
     const amount = p * Math.pow(1 + r, t);
     setResult(parseFloat(amount.toFixed(2)));
   };
-
-  const chartData = [
-    { name: 'Initial Deposit', value: parseFloat(principal) },
-    { name: 'Total Interest Earned', value: result !== null ? result - parseFloat(principal) : 0 },
-  ];
-
-  const COLORS = ['#4e73df', '#1cc88a'];
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
@@ -117,26 +109,6 @@ export function SavingsCalculator() {
                     <p className="text-sm text-gray-600">
                       Total Interest Earned: ₹{(result - parseFloat(principal)).toLocaleString()}
                     </p>
-
-                    {/* Pie Chart Section */}
-                    <div className="mt-6">
-                      <h3 className="text-xl font-semibold">Savings Breakdown</h3>
-                      <PieChart width={400} height={400}>
-                        <Pie
-                          data={chartData}
-                          dataKey="value"
-                          nameKey="name"
-                          outerRadius={150}
-                          fill="#8884d8"
-                        >
-                          {chartData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                          ))}
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                      </PieChart>
-                    </div>
                   </div>
                 )}
               </div>
