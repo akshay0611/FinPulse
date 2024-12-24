@@ -29,6 +29,9 @@ import CookiePolicy from './pages/Cookie-Policy';
 import Disclaimer from './pages/Disclaimer';
 import Courses from './pages/Courses';
 import Quiz from './pages/Quiz';
+import Calculators from './pages/Calculators';
+import { SavingsCalculator } from './calculators/Savings'; 
+import { LoanCalculator } from './calculators/Loan';
 
 function App() {
   return (
@@ -66,7 +69,9 @@ function App() {
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/quiz" element={<Quiz />} />
-         
+          <Route path="/calculators" element={<Calculators />} />
+          <Route path="/savings" element={<SavingsCalculator />} />
+          <Route path="/loan" element={<LoanCalculator />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
