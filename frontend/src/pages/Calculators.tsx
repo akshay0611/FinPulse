@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom'; // Import Link
 import { Calculator, Coins, PiggyBank, BarChart3 } from 'lucide-react';
 
 const calculators = [
+  { title: 'Sip Calculator', description: 'Calculate the future value of your SIP investments.', icon: PiggyBank, href: '/sip' },
   { title: 'Savings Calculator', description: 'Plan your savings and see how your money grows over time.', icon: PiggyBank, href: '/savings' },
   { title: 'Loan Calculator', description: 'Calculate EMI, total payment, and interest for your loans.', icon: Coins, href: '/loan' },
   { title: 'PPF Calculator', description: 'Calculate the maturity amount, total investment, and total interest for your PPF account.', icon: PiggyBank, href: '/ppf' },
   { title: 'Investment Calculator', description: 'Project the future value of your investments.', icon: BarChart3, href: '/investment' },
   { title: 'Tax Calculator', description: 'Estimate your income tax based on your earnings and age.', icon: Calculator, href: '/tax' },
+  { title: 'EMI Calculator', description: 'Calculate EMI, total payment, and interest for your loans.', icon: Coins, href: '/emi' },
 ];
 
 export default function CalculatorsPage() {

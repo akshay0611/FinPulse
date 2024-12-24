@@ -32,6 +32,7 @@ import Quiz from './pages/Quiz';
 import Calculators from './pages/Calculators';
 import { SavingsCalculator } from './calculators/Savings'; 
 import { LoanCalculator } from './calculators/Loan';
+import { SIPCalculator } from './calculators/Sip';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
           <Route path="/calculators" element={<Calculators />} />
           <Route path="/savings" element={<SavingsCalculator />} />
           <Route path="/loan" element={<LoanCalculator />} />
+          <Route path="/sip" element={<SIPCalculator />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
