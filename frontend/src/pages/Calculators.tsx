@@ -17,7 +17,7 @@ export default function CalculatorsPage() {
       <main className="flex-grow">
         <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="container mx-auto px-4 text-center relative z-10 mt-12"
