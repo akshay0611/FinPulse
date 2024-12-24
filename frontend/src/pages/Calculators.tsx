@@ -25,7 +25,7 @@ export default function CalculatorsPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Financial Calculators</h1>
             <p className="text-xl mb-8">Use our range of calculators to plan your financial future.</p>
           </motion.div>
-        </section>
+        </section> 
 
         <section className="py-16">
           <div className="container mx-auto px-4">
