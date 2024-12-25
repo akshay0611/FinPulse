@@ -63,6 +63,7 @@ import { Inflation } from './calculators/Inflation';
 import { PostOfficeMIS } from './calculators/PostOfficeMIS';
 import { ScssCalculator } from './calculators/ScssCalculator';
 import { StockAverageCalculator } from './calculators/StockAverageCalculator';
+import Feedback from './pages/Feedback';
 
 function App() {
   return (
@@ -135,6 +136,7 @@ function App() {
           <Route path="/post-office-mis" element={<PostOfficeMIS />} />
           <Route path="/scss-calculator" element={<ScssCalculator />} />
           <Route path="/stock-average-calculator" element={<StockAverageCalculator />} />
+          <Route path="/feedback" element={<Feedback />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 

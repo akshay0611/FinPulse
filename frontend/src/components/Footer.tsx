@@ -73,6 +73,12 @@ const Footer = () => {
                   Press
                 </Link>
               </li>
+              {/* Feedback Link */}
+              <li>
+                <Link to="/feedback" className="hover:text-[#e341ff]">
+                  Feedback
+                </Link>
+              </li>
             </ul>
           </div>
 
