@@ -33,6 +33,7 @@ import Calculators from './pages/Calculators';
 import { SavingsCalculator } from './calculators/Savings'; 
 import { LoanCalculator } from './calculators/Loan';
 import { SIPCalculator } from './calculators/Sip';
+ 
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Routes>
           <Route path="/" element={
             <>
+         
               <Hero />
               <WhyChooseUs /> 
               <NewsSection />
