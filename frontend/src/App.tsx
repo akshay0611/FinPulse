@@ -45,9 +45,20 @@ import { RetirementCalculator } from './calculators/Retirement';
 import { EMI } from './calculators/Emi';
 import { CarLoanEmi } from './calculators/CarLoanEmi';
 import { HomeLoanEmi } from './calculators/HomeLoanEmi';
-
-
- 
+import { SimpleInterest } from './calculators/SimpleInterest';
+import { CompoundInterest } from './calculators/CompoundInterest';
+import { Nsc } from './calculators/Nsc';
+import { StepUpSip } from './calculators/StepUpSip';
+import { IncomeTax } from './calculators/IncomeTax';
+import { Gratuity } from './calculators/Gratuity';
+import { Apy } from './calculators/Apy';
+import { Cagr } from './calculators/Cagr';
+import { Gst } from './calculators/Gst';
+import { Brokerage } from './calculators/Brokerage';
+import { Margin } from './calculators/Margin';
+import { Tds } from './calculators/Tds';
+import { Salary } from './calculators/Salary';
+import { Inflation } from './calculators/Inflation';
 
 function App() {
   return (
@@ -102,7 +113,20 @@ function App() {
           <Route path="/emi" element={<EMI />} />
           <Route path="/car-loan-emi" element={<CarLoanEmi />} />
           <Route path="/home-loan-emi" element={<HomeLoanEmi />} />
-
+          <Route path="/simple-interest" element={<SimpleInterest />} />
+          <Route path="/compound-interest" element={<CompoundInterest />} />
+          <Route path="/nsc" element={<Nsc />} />
+          <Route path="/step-up-sip" element={<StepUpSip />} />
+          <Route path="/income-tax" element={<IncomeTax />} />
+          <Route path="/gratuity" element={<Gratuity />} />
+          <Route path="/apy" element={<Apy />} />
+          <Route path="/cagr" element={<Cagr />} /> 
+          <Route path="/gst" element={<Gst />} />
+          <Route path="/brokerage" element={<Brokerage />} />
+          <Route path="/margin" element={<Margin />} />
+          <Route path="/tds" element={<Tds />} />
+          <Route path="/salary" element={<Salary />} />
+          <Route path="/inflation" element={<Inflation />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
