@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { BookOpen, Lightbulb, TrendingUp } from "lucide-react";
-import { Link, Element } from "react-scroll";
 
 interface Guide {
   id: number;
@@ -56,7 +55,48 @@ const guides: Guide[] = [
           "Cryptocurrency: Digital or virtual currencies that use cryptography for security. While highly volatile, cryptocurrencies like Bitcoin and Ethereum have gained popularity as speculative investments.",
         ],
       },
-      // Other content...
+      {
+        title: "Setting Your Investment Goals",
+        text:
+          "Before you start investing, it’s important to define your financial goals. These goals will guide your investment strategy and help you decide the right type of investment for your needs.",
+        list: [
+          "Short-Term vs. Long-Term: Are you investing for a goal in the next 1-5 years (like buying a car or a vacation) or for long-term goals (like retirement)?",
+          "Risk Tolerance: How comfortable are you with the possibility of losing money? Higher risk investments often offer higher potential returns, but they can also be more volatile.",
+          "Time Horizon: The length of time you plan to invest will influence the types of investments you should choose. A longer time horizon often allows you to take more risks.",
+        ],
+      },
+      {
+        title: "Building Your Investment Portfolio",
+        text:
+          "An investment portfolio is a collection of assets you own. To build a strong portfolio, it’s important to diversify, meaning spreading your investments across different asset classes to reduce risk.",
+        steps: [
+          "Start with an Emergency Fund: Before you invest, ensure you have a savings buffer for emergencies. This typically means 3-6 months' worth of living expenses.",
+          "Define Your Asset Allocation: Decide how much of your money will go into stocks, bonds, real estate, etc. Your age, risk tolerance, and time horizon will influence this decision.",
+          "Start Small: If you're new to investing, start with smaller amounts of money. Many platforms allow you to start investing with as little as $1.",
+          "Regularly Rebalance: Over time, your investments will grow at different rates. Rebalancing ensures your portfolio stays aligned with your goals and risk tolerance.",
+        ],
+      },
+      {
+        title: "Where to Invest",
+        text:
+          "There are numerous platforms where you can begin investing. Here are some common ones:",
+        list: [
+          "Brokerage Accounts: These accounts allow you to buy and sell a variety of investments like stocks, bonds, and mutual funds. Examples include Robinhood, E*TRADE, and Charles Schwab.",
+          "Robo-Advisors: These are automated platforms that build and manage a diversified portfolio for you. Examples include Betterment and Wealthfront.",
+          "Retirement Accounts (IRA, 401(k)): If you're investing for retirement, tax-advantaged accounts like IRAs and 401(k)s can help you save on taxes while growing your investments.",
+        ],
+      },
+      {
+        title: "Understanding Investment Risks",
+        text:
+          "All investments come with risk, which means the possibility of losing some or all of your money. Understanding risk is crucial for making informed decisions.",
+        list: [
+          "Market Risk: The risk of losing money due to changes in the overall market.",
+          "Credit Risk: The risk that a bond issuer or borrower will fail to make payments.",
+          "Liquidity Risk: The risk that you won’t be able to sell an investment quickly at a reasonable price.",
+          "Inflation Risk: The risk that your investments won’t keep up with inflation and lose purchasing power.",
+        ],
+      },
     ],
     keyTakeaways: [
       "Understand the importance of risk and reward.",
@@ -90,51 +130,19 @@ export default function GuidePage() {
     .filter((g) => g !== undefined) as Guide[];
 
   return (
-<div className="bg-gradient-to-r from-green-50 to-blue-50 min-h-screen p-8 flex">
-
-{/* Sidebar Section */}
-<div className="w-1/5 pl-4 p-6 bg-gray-50 border-r-2 border-gray-200 shadow-lg rounded-lg h-screen sticky top-16">
-  <h2 className="text-2xl font-bold text-gray-800 mb-4">Sections</h2>
-  <ul className="space-y-4">
-    {guide.content.map((section, index) => (
-      <li key={index} className="text-lg font-semibold">
-        <Link
-          to={`section-${index}`}
-          smooth={true}
-          duration={500}
-          className="text-blue-600 hover:text-blue-800 transition duration-300"
-        >
-          {section.title}
-        </Link>
-      </li>
-    ))}
-    <li className="text-lg font-semibold">
-      <Link
-        to="key-takeaways"
-        smooth={true}
-        duration={500}
-        className="text-blue-600 hover:text-blue-800 transition duration-300"
-      >
-        Key Takeaways
-      </Link>
-    </li>
-  </ul>
-</div>
-
-
-      {/* Main Content Section */}
-      <div className="w-3/4 ml-8">
+    <div className="bg-gradient-to-r from-green-50 to-blue-50 min-h-screen p-8">
+      <div className="w-full max-w-7xl mx-auto">
         <img
           src={guide.coverImage}
           alt={guide.title}
-          className="w-full h-64 object-cover rounded-lg shadow-lg mt-16"
+           className="w-full h-64 object-cover rounded-lg shadow-lg mt-16"
         />
         <h1 className="text-4xl font-bold text-gray-800 mt-6">{guide.title}</h1>
         <p className="text-lg font-semibold text-gray-500 mt-2">{guide.category} Guide</p>
 
         <div className="mt-10 space-y-8">
           {guide.content.map((section, index) => (
-            <Element name={`section-${index}`} key={index} className="space-y-4">
+            <div key={index} className="space-y-4">
               <h2 className="text-3xl font-semibold text-gray-800">{section.title}</h2>
               <p className="text-lg text-gray-700">{section.text}</p>
               {section.list && (
@@ -155,20 +163,19 @@ export default function GuidePage() {
                   ))}
                 </ol>
               )}
-            </Element>
+            </div>
           ))}
 
-    {/* Key Takeaways Section */}
-    <Element name="key-takeaways" className="mt-10">
-      <h3 className="text-3xl font-semibold text-gray-800">Key Takeaways</h3>
-      <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
-        {guide.keyTakeaways.map((takeaway, index) => (
-          <li key={index} className="hover:text-blue-500 transition duration-300">
-            {takeaway}
-          </li>
-        ))}
-      </ul>
-    </Element>
+          <div className="mt-10">
+            <h3 className="text-3xl font-semibold text-gray-800">Key Takeaways</h3>
+            <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+              {guide.keyTakeaways.map((takeaway, index) => (
+                <li key={index} className="hover:text-blue-500 transition duration-300">
+                  {takeaway}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="mt-10">
             <h3 className="text-3xl font-semibold text-gray-800">Tips</h3>
