@@ -33,6 +33,20 @@ import Calculators from './pages/Calculators';
 import { SIPCalculator } from './calculators/Sip';
 import { LumpsumCalculator } from './calculators/Lumpsum';
 import { SWPCalculator } from './calculators/Swp';
+import { MFCalculator } from './calculators/Mf';
+import { SSYCalculator } from './calculators/Ssy';
+import { PPFCalculator } from './calculators/Ppf';
+import { EPFCalculator } from './calculators/Epf';
+import { FDCalculator } from './calculators/Fd';
+import { RDCalculator } from './calculators/Rd';
+import { NPSCalculator } from './calculators/Nps';
+import { HRA } from './calculators/Hra';
+import { RetirementCalculator } from './calculators/Retirement';
+import { EMI } from './calculators/Emi';
+import { CarLoanEmi } from './calculators/CarLoanEmi';
+import { HomeLoanEmi } from './calculators/HomeLoanEmi';
+
+
  
 
 function App() {
@@ -76,6 +90,19 @@ function App() {
           <Route path="/sip" element={<SIPCalculator />} />
           <Route path="/lumpsum" element={<LumpsumCalculator />} />
           <Route path="/swp" element={<SWPCalculator />} />
+          <Route path="/mf" element={<MFCalculator />} />
+          <Route path="/ssy" element={<SSYCalculator />} />
+          <Route path="/ppf" element={<PPFCalculator />} />
+          <Route path="/epf" element={<EPFCalculator />} />
+          <Route path="/fd" element={<FDCalculator />} />
+          <Route path="/rd" element={<RDCalculator />} />
+          <Route path="/nps" element={<NPSCalculator />} />
+          <Route path="/hra" element={<HRA />} />
+          <Route path="/retirement" element={<RetirementCalculator />} />
+          <Route path="/emi" element={<EMI />} />
+          <Route path="/car-loan-emi" element={<CarLoanEmi />} />
+          <Route path="/home-loan-emi" element={<HomeLoanEmi />} />
+
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
