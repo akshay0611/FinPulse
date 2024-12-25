@@ -64,6 +64,7 @@ import { PostOfficeMIS } from './calculators/PostOfficeMIS';
 import { ScssCalculator } from './calculators/ScssCalculator';
 import { StockAverageCalculator } from './calculators/StockAverageCalculator';
 import Feedback from './pages/Feedback';
+import GuidePage from './pages/GuidePage.tsx';
 
 function App() {
   return (
@@ -137,6 +138,7 @@ function App() {
           <Route path="/scss-calculator" element={<ScssCalculator />} />
           <Route path="/stock-average-calculator" element={<StockAverageCalculator />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/guides/:guideId" element={<GuidePage />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 

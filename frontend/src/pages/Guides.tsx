@@ -3,14 +3,24 @@ import Navbar from '../components/Navbar';
 import { ArrowRight, Search, BookOpen, Lightbulb, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// const guides = [
+//   { title: "Investing 101: Getting Started", category: "Beginner", icon: BookOpen },
+//   { title: "Understanding Stock Market Basics", category: "Beginner", icon: TrendingUp },
+//   { title: "How to Create a Diversified Portfolio", category: "Intermediate", icon: Lightbulb },
+//   { title: "Retirement Planning Strategies", category: "Intermediate", icon: Lightbulb },
+//   { title: "Advanced Options Trading Techniques", category: "Advanced", icon: TrendingUp },
+//   { title: "Tax Strategies for Investors", category: "Advanced", icon: Lightbulb },
+// ]
+
 const guides = [
-  { title: "Investing 101: Getting Started", category: "Beginner", icon: BookOpen },
-  { title: "Understanding Stock Market Basics", category: "Beginner", icon: TrendingUp },
-  { title: "How to Create a Diversified Portfolio", category: "Intermediate", icon: Lightbulb },
-  { title: "Retirement Planning Strategies", category: "Intermediate", icon: Lightbulb },
-  { title: "Advanced Options Trading Techniques", category: "Advanced", icon: TrendingUp },
-  { title: "Tax Strategies for Investors", category: "Advanced", icon: Lightbulb },
-]
+  { id: 1, title: "Investing 101: Getting Started", category: "Beginner", icon: BookOpen },
+  { id: 2, title: "Understanding Stock Market Basics", category: "Beginner", icon: TrendingUp },
+  { id: 3, title: "How to Create a Diversified Portfolio", category: "Intermediate", icon: Lightbulb },
+  { id: 4, title: "Retirement Planning Strategies", category: "Intermediate", icon: Lightbulb },
+  { id: 5, title: "Advanced Options Trading Techniques", category: "Advanced", icon: TrendingUp },
+  { id: 6, title: "Tax Strategies for Investors", category: "Advanced", icon: Lightbulb },
+];
+
 
 export default function GuidesPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -65,10 +75,14 @@ export default function GuidesPage() {
                     <h3 className="text-xl font-semibold">{guide.title}</h3>
                     <p className="text-sm text-gray-600">{guide.category}</p>
                   </div>
-                  <a href="#" className="inline-flex items-center py-2 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
-                    Read Guide
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+<a
+  href={`/guides/${guide.id}`}
+  className="inline-flex items-center py-2 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+>
+  Read Guide
+  <ArrowRight className="ml-2 h-4 w-4" />
+</a>
+
                 </div>
               ))}
             </div>
