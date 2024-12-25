@@ -125,7 +125,10 @@ export default function HelpCenter() {
                   <h3 className="text-xl font-semibold">Phone Support</h3>
                   <p className="text-sm text-gray-600">Speak directly with a customer service representative</p>
                 </div>
-                <button className="text-center w-full py-2 px-4 rounded bg-purple-600 text-white hover:bg-purple-700">
+                <button 
+                  onClick={() => window.location.href = 'tel:+15551234567'}
+                  className="text-center w-full py-2 px-4 rounded bg-purple-600 text-white hover:bg-purple-700"
+                >
                   Call Us
                 </button>
               </div>
