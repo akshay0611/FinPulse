@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { ArrowRight, Search, BookOpen, Lightbulb, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-// const guides = [
-//   { title: "Investing 101: Getting Started", category: "Beginner", icon: BookOpen },
-//   { title: "Understanding Stock Market Basics", category: "Beginner", icon: TrendingUp },
-//   { title: "How to Create a Diversified Portfolio", category: "Intermediate", icon: Lightbulb },
-//   { title: "Retirement Planning Strategies", category: "Intermediate", icon: Lightbulb },
-//   { title: "Advanced Options Trading Techniques", category: "Advanced", icon: TrendingUp },
-//   { title: "Tax Strategies for Investors", category: "Advanced", icon: Lightbulb },
-// ]
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 const guides = [
   { id: 1, title: "Investing 101: Getting Started", category: "Beginner", icon: BookOpen },
@@ -21,10 +13,10 @@ const guides = [
   { id: 6, title: "Tax Strategies for Investors", category: "Advanced", icon: Lightbulb },
 ];
 
-
 export default function GuidesPage() {
   const [searchQuery, setSearchQuery] = useState('');
-  
+  const navigate = useNavigate(); // Initialize useNavigate
+
   // Filter guides based on the search query
   const filteredGuides = guides.filter(guide =>
     guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -64,7 +56,6 @@ export default function GuidesPage() {
   <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
 </section>
 
-
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -75,14 +66,13 @@ export default function GuidesPage() {
                     <h3 className="text-xl font-semibold">{guide.title}</h3>
                     <p className="text-sm text-gray-600">{guide.category}</p>
                   </div>
-<a
-  href={`/guides/${guide.id}`}
-  className="inline-flex items-center py-2 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
->
-  Read Guide
-  <ArrowRight className="ml-2 h-4 w-4" />
-</a>
-
+                  <button
+                    onClick={() => navigate(`/guides/${guide.id}`)} // Use navigate for redirection
+                    className="inline-flex items-center py-2 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+                  >
+                    Read Guide
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
                 </div>
               ))}
             </div>

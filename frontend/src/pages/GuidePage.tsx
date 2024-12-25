@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { BookOpen, Lightbulb, TrendingUp } from "lucide-react";
 
+
 interface Guide {
   id: number;
   title: string;
