@@ -54,11 +54,15 @@ import { Gratuity } from './calculators/Gratuity';
 import { Apy } from './calculators/Apy';
 import { Cagr } from './calculators/Cagr';
 import { Gst } from './calculators/Gst';
+import { FlatVsReducingRate } from './calculators/FlatVsReducingRate';
 import { Brokerage } from './calculators/Brokerage';
 import { Margin } from './calculators/Margin';
 import { Tds } from './calculators/Tds';
 import { Salary } from './calculators/Salary';
 import { Inflation } from './calculators/Inflation';
+import { PostOfficeMIS } from './calculators/PostOfficeMIS';
+import { ScssCalculator } from './calculators/ScssCalculator';
+import { StockAverageCalculator } from './calculators/StockAverageCalculator';
 
 function App() {
   return (
@@ -122,11 +126,15 @@ function App() {
           <Route path="/apy" element={<Apy />} />
           <Route path="/cagr" element={<Cagr />} /> 
           <Route path="/gst" element={<Gst />} />
+          <Route path="/flat-vs-reducing-rate" element={<FlatVsReducingRate />} />
           <Route path="/brokerage" element={<Brokerage />} />
           <Route path="/margin" element={<Margin />} />
           <Route path="/tds" element={<Tds />} />
           <Route path="/salary" element={<Salary />} />
           <Route path="/inflation" element={<Inflation />} />
+          <Route path="/post-office-mis" element={<PostOfficeMIS />} />
+          <Route path="/scss-calculator" element={<ScssCalculator />} />
+          <Route path="/stock-average-calculator" element={<StockAverageCalculator />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
