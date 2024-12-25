@@ -10,10 +10,12 @@ FinPulse is a cutting-edge web application designed to deliver **financial news*
 - **🏛️ Government Schemes**: Access detailed information on new government schemes for individuals and businesses, fetched directly from **MongoDB Atlas**. 🏢💡
 - **💹 Investment Ideas**: Explore diverse investment opportunities, including mutual funds, stocks, and more. 📈💸
 - **📝 Blogs**: Read engaging and informative blog articles fetched dynamically from **MongoDB Atlas**. 📖✨
+- **🎓 Courses**: Access a wide range of educational resources and courses on financial topics to improve your knowledge and skills. 📚💡
+- **📝 Quiz**: Test your financial knowledge with interactive quizzes designed to challenge and enhance your understanding. 🧠💬
+- **💻 Calculators**: Use various financial calculators like SIP, Lumpsum, SWP, MF, Retirement, Tax, Loan EMIs, and more to make informed financial decisions. 🧮📊
 - **🎨 User-Friendly Interface**: Navigate effortlessly with an intuitive and seamless design. 🔧
 - **📱 Responsive Design**: Enjoy an optimized experience on both desktop and mobile devices. 📱🖥️
 - **🌐 Multi-Language Support**: Integrated Google Translate ensures accessibility in multiple languages. 🌍🔄
-
 ---
 
 ## Technologies Used 🛠️
@@ -80,6 +82,9 @@ To set up FinPulse locally, follow these steps:
 - **📊 Investments Page**: Dive deep into various investment options tailored for your needs.  
 - **📝 Blogs Page**: Explore a variety of blog articles covering financial topics.  
 - **📧 Contact Page**: Connect for support, feedback, or inquiries.  
+- **🎓 Courses Page**: Access financial education materials and courses.  
+- **🧠 Quiz Page**: Challenge yourself with quizzes to test and improve your financial knowledge.  
+- **💻 Calculators Page**: Use financial tools like SIP, Lumpsum, SWP, Retirement, Loan EMIs, and more for practical insights into your finances.
 
 ---
 
@@ -123,4 +128,8 @@ A huge thanks to all contributors and the open-source community for their invalu
 
 ## Contact 📞
 
-For inquiries or feedback, please reach out to **[akshay.allen26200@gmail.com](mailto:akshay.allen26200@gmail.com)**. 📧  
+For inquiries or feedback, please reach out to **[akshay.allen26200@gmail.com](mailto:akshay.allen26200@gmail.com)**. 📧
+
+---
+
+Let me know if you need further adjustments!
