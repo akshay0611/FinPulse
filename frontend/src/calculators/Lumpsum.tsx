@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
 
-export function LoanCalculator() {
+export function LumpsumCalculator() {
   const [principal, setPrincipal] = useState('');
   const [rate, setRate] = useState('');
   const [time, setTime] = useState('');
   const [result, setResult] = useState<number | null>(null);
 
-  const calculateLoanEMI = () => {
-    const p = parseFloat(principal);
-    const r = parseFloat(rate) / (12 * 100); // Monthly interest rate
-    const t = parseFloat(time) * 12; // Time period in months
-    const emi = (p * r * Math.pow(1 + r, t)) / (Math.pow(1 + r, t) - 1);
-    setResult(parseFloat(emi.toFixed(2)));
+  const calculateLumpsum = () => {
+    const P = parseFloat(principal);
+    const r = parseFloat(rate) / 100; // Annual interest rate
+    const n = parseFloat(time); // Time in years
+
+    // Lumpsum formula: FV = P * (1 + r)^n
+    const futureValue = P * Math.pow(1 + r, n);
+    setResult(parseFloat(futureValue.toFixed(2)));
   };
 
   return (
@@ -21,7 +23,7 @@ export function LoanCalculator() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+        <section className="pt-32 pb-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -29,10 +31,9 @@ export function LoanCalculator() {
             transition={{ duration: 0.8 }}
             className="container mx-auto px-4 relative z-10"
           >
-             <div className="mb-8"></div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Loan EMI Calculator</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Lumpsum Calculator</h1>
             <p className="text-xl mb-8 max-w-3xl">
-              Calculate your monthly loan installment with ease.
+              Estimate your future returns with our Lumpsum investment calculator.
             </p>
           </motion.div>
         </section>
@@ -42,21 +43,21 @@ export function LoanCalculator() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
               <div className="p-6 md:p-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Calculate Your Loan EMI</h2>
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">Calculate Your Lumpsum Returns</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <label
                       htmlFor="principal"
                       className="block text-lg font-medium text-gray-700"
                     >
-                      Loan Amount (₹)
+                      Principal Amount (₹)
                     </label>
                     <input
                       id="principal"
                       type="number"
                       value={principal}
                       onChange={(e) => setPrincipal(e.target.value)}
-                      placeholder="e.g., 500000"
+                      placeholder="e.g., 100000"
                       className="w-full py-2 px-4 mt-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-200 ease-in-out"
                     />
                   </div>
@@ -65,14 +66,14 @@ export function LoanCalculator() {
                       htmlFor="rate"
                       className="block text-lg font-medium text-gray-700"
                     >
-                      Annual Interest Rate (%)
+                      Annual Interest Rate (% p.a.)
                     </label>
                     <input
                       id="rate"
                       type="number"
                       value={rate}
                       onChange={(e) => setRate(e.target.value)}
-                      placeholder="e.g., 7.5"
+                      placeholder="e.g., 12"
                       className="w-full py-2 px-4 mt-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none transition duration-200 ease-in-out"
                     />
                   </div>
@@ -81,7 +82,7 @@ export function LoanCalculator() {
                       htmlFor="time"
                       className="block text-lg font-medium text-gray-700"
                     >
-                      Loan Tenure (Years)
+                      Time Period (Years)
                     </label>
                     <input
                       id="time"
@@ -95,22 +96,22 @@ export function LoanCalculator() {
                 </div>
 
                 <button
-                  onClick={calculateLoanEMI}
-                  className="w-full mt-6 py-2 px-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 ease-in-out"
+                  onClick={calculateLumpsum}
+                  className="w-full mt-6 py-2 px-4 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-semibold rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 ease-in-out"
                 >
-                  Calculate EMI
+                  Calculate
                 </button>
 
                 {result !== null && (
                   <div className="mt-6 p-4 bg-green-100 rounded-md">
                     <p className="text-lg font-semibold text-gray-800">
-                      Monthly EMI: ₹{result.toLocaleString()}
+                      Future Value: ₹{result.toLocaleString()}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Total Payment: ₹{(result * parseFloat(time) * 12).toLocaleString()}
+                      Total Investment: ₹{parseFloat(principal).toLocaleString()}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Total Interest: ₹{((result * parseFloat(time) * 12) - parseFloat(principal)).toLocaleString()}
+                      Total Gain: ₹{(result - parseFloat(principal)).toLocaleString()}
                     </p>
                   </div>
                 )}

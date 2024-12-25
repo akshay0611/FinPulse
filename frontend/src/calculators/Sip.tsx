@@ -23,20 +23,21 @@ export function SIPCalculator() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-r from-teal-600 to-blue-600 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="container mx-auto px-4 relative z-10"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">SIP Calculator</h1>
-            <p className="text-xl mb-8 max-w-3xl">
-              Estimate your future returns with our Systematic Investment Plan (SIP) calculator.
-            </p>
-          </motion.div>
-        </section>
+        <section className="pt-32 pb-20 bg-gradient-to-r from-purple-600 to-indigo-600 text-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-4 relative z-10"
+  >
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">SIP Calculator</h1>
+    <p className="text-xl mb-8 max-w-3xl">
+      Estimate your future returns with our Systematic Investment Plan (SIP) calculator.
+    </p>
+  </motion.div>
+</section>
+
 
         {/* Card Layout */}
         <section className="py-12">

@@ -30,9 +30,9 @@ import Disclaimer from './pages/Disclaimer';
 import Courses from './pages/Courses';
 import Quiz from './pages/Quiz';
 import Calculators from './pages/Calculators';
-import { SavingsCalculator } from './calculators/Savings'; 
-import { LoanCalculator } from './calculators/Loan';
 import { SIPCalculator } from './calculators/Sip';
+import { LumpsumCalculator } from './calculators/Lumpsum';
+import { SWPCalculator } from './calculators/Swp';
  
 
 function App() {
@@ -73,9 +73,9 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/calculators" element={<Calculators />} />
-          <Route path="/savings" element={<SavingsCalculator />} />
-          <Route path="/loan" element={<LoanCalculator />} />
           <Route path="/sip" element={<SIPCalculator />} />
+          <Route path="/lumpsum" element={<LumpsumCalculator />} />
+          <Route path="/swp" element={<SWPCalculator />} />
         </Routes>
         <Footer />
         <ScrollToTopButton /> 
