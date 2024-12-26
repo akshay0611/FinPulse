@@ -4,9 +4,10 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { CheckCircle, Linkedin, Users, TrendingUp, Award, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom'; 
 
 const teamMembers = [
-  { name: 'Akshay Kumar', role: 'Director', image: '/placeholder.svg', linkedin: '#' },
+  { name: 'Akshay Kumar', role: 'Director', image: 'https://assets.leetcode.com/users/akshay0611/avatar_1729924803.png', linkedin: 'https://www.linkedin.com/in/akshaykumar0611/' },
   { name: 'Priya Sharma', role: 'Chief Financial Officer', image: '/placeholder.svg', linkedin: '#' },
   { name: 'Rahul Mehta', role: 'Head of Technology', image: '/placeholder.svg', linkedin: '#' },
   { name: 'Anita Desai', role: 'Chief Marketing Officer', image: '/placeholder.svg', linkedin: '#' },
@@ -103,9 +104,14 @@ export default function AboutPage() {
                   <p className="text-lg mt-4 mb-6">
                     A dynamic environment for a dynamic team. We pour our souls into our craft, but that doesn't compromise on our ability to keep the work environment lively. We don't juggle work and life; we handle it like the Pros we are!
                   </p>
-                  <button className="px-6 py-3 bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-300 rounded-lg text-lg">
+                  {/* <button className="px-6 py-3 bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-300 rounded-lg text-lg">
                     Work With Us
-                  </button>
+                  </button> */}
+                  <Link to="/careers">  {/* Updated to use Link for navigation */}
+                    <button className="px-6 py-3 bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-300 rounded-lg text-lg">
+                      Work With Us
+                    </button>
+                  </Link>  {/* Closing Link tag */}
                 </div>
               )}
             </div>
