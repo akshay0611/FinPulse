@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, TrendingUp, Menu, X, ChevronDown } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom'; // Replace useHistory with useNavigate
+import { TrendingUp, Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom'; 
+import SearchBar from './SearchBar'; 
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
-  const [learnDropdownOpen, setLearnDropdownOpen] = useState(false); // State for Learn dropdown
-  const [searchQuery, setSearchQuery] = useState(''); // Track search input
-  const [searchResults, setSearchResults] = useState<string[]>([]); // Store filtered search results
+  const [learnDropdownOpen, setLearnDropdownOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
-  const learnRef = useRef<HTMLDivElement>(null); // Ref for Learn dropdown
-  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const learnRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setMenuOpen(prevState => !prevState);
@@ -45,58 +43,6 @@ const Navbar = () => {
     };
   }, [menuOpen, toolsDropdownOpen, learnDropdownOpen]);
 
-  // Suggestions for search
-  const pages = [
-    'About',
-    'Contact',
-    'Careers',
-    'Press',
-    'Feedback',
-    'Blog',
-    'News',
-    'Guides',
-    'Help Center',
-    'Privacy Policy',
-    'Terms of Service',
-    'Cookie-Policy',
-    'Disclaimer'
-  ];
-  
-  // Handle input change and filter results
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value.toLowerCase();
-    setSearchQuery(query);
-
-    if (query) {
-      const filteredResults = pages.filter(page => page.toLowerCase().includes(query));
-      setSearchResults(filteredResults);
-    } else {
-      setSearchResults([]);
-    }
-  };
-
-  const handleResultClick = (result: string) => {
-    setSearchQuery(result); // Set the search query to the clicked result
-    setSearchResults([]); // Clear results after selection
-  
-    // Mapping specific page names to their route paths
-    const routeMapping: { [key: string]: string } = {
-      'Help Center': '/helpcenter', // Match "Help Center" to "/helpcenter"
-      'Privacy Policy': '/privacy-policy', // Add other mappings if needed
-      'Terms of Service': '/terms-of-service',
-      'Cookie-Policy': '/cookie-policy',
-      // Add more mappings here if needed
-    };
-  
-    // Check if the result has a mapped route, otherwise format as before
-    const formattedResult = routeMapping[result] || `/${result.toLowerCase().replace(/\s+/g, '-')}`;
-  
-    // Navigate to the corresponding page
-    navigate(formattedResult);
-  };
-  
-  
-
   return (
     <nav className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-4 px-6 flex items-center justify-between fixed w-full top-0 z-50 transition-all duration-300 ease-in-out">
       {/* Hamburger Menu for Mobile */}
@@ -117,34 +63,8 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Search Bar */}
-      <div className="flex-1 max-w-sm mx-auto hidden lg:block">
-        <div className="relative">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="Search..."
-            className="w-full px-4 py-2 rounded-full bg-indigo-800 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-400"
-          />
-          <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-300" />
-          
-          {/* Dropdown container for search results */}
-          {searchResults.length > 0 && (
-            <div className="absolute w-full bg-indigo-800 text-white rounded-lg shadow-lg mt-2 z-50">
-              {searchResults.map((result, index) => (
-                <div
-                  key={index}
-                  className="px-4 py-2 hover:bg-indigo-700 cursor-pointer"
-                  onClick={() => handleResultClick(result)}
-                >
-                  {result}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+      {/* Search Bar Component */}
+      <SearchBar /> {/* Pass pages array inside SearchBar */}
 
       {/* Menu items */}
       <div ref={menuRef} className={`navbar-menu fixed top-0 left-0 h-full bg-indigo-900 z-40 transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:static lg:flex lg:items-center lg:space-x-6 lg:translate-x-0 lg:bg-transparent`}>
@@ -196,7 +116,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/signin-signup">
-            <button className="bg-emerald-400 px-3 py-1.5 rounded-lg text-white-200 font-bold hover:bg-emerald-500 transition-all duration-200 ease-in-out">
+            <button className="px-6 py-2 rounded-full bg-emerald-400 text-white hover:bg-emerald-500 transition-all duration-200 ease-in-out">
               Sign In / Sign Up
             </button>
           </Link>
