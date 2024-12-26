@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import { ArrowRight, Search, BookOpen, Lightbulb, TrendingUp } from 'lucide-react';
+import { ArrowRight, Search, BookOpen, Lightbulb, TrendingUp, BarChart2, PieChart, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-
+import { useNavigate } from 'react-router-dom'; 
 const guides = [
   { id: 1, title: "Investing 101: Getting Started", category: "Beginner", icon: BookOpen },
-  { id: 2, title: "Understanding Stock Market Basics", category: "Beginner", icon: TrendingUp },
-  { id: 3, title: "How to Create a Diversified Portfolio", category: "Intermediate", icon: Lightbulb },
-  { id: 4, title: "Retirement Planning Strategies", category: "Intermediate", icon: Lightbulb },
+  { id: 2, title: "Understanding Stock Market Basics", category: "Beginner", icon: BarChart2 },
+  { id: 3, title: "How to Create a Diversified Portfolio", category: "Intermediate", icon: PieChart },
+  { id: 4, title: "Retirement Planning Strategies", category: "Intermediate", icon: Calendar },
   { id: 5, title: "Advanced Options Trading Techniques", category: "Advanced", icon: TrendingUp },
   { id: 6, title: "Tax Strategies for Investors", category: "Advanced", icon: Lightbulb },
 ];
