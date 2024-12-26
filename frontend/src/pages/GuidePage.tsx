@@ -580,7 +580,7 @@ export default function GuidePage() {
 
   if (!guide) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white text-gray-800">
+      <div className="min-h-screen flex items-center justify-center bg-white text-gray-900">
         <h1 className="text-2xl font-bold">Guide not found</h1>
       </div>
     );
@@ -596,29 +596,34 @@ export default function GuidePage() {
         <img
           src={guide.coverImage}
           alt={guide.title}
-          className="w-full h-64 object-cover rounded-lg shadow-lg mt-16"
+          className="w-full h-64 object-cover rounded-lg shadow-lg mt-16 border-4 border-purple-600"
         />
-       
-       <div className="flex items-start mt-6 space-x-4">
-  {/* Wrapper for the icon */}
-  <div className="w-10 h-10" style={{ color: '#9333ea' }}>
-    <guide.icon />
-  </div>
-  <h1 className="text-4xl font-bold text-gray-800 mt-2">{guide.title}</h1>
-</div>
 
+<div className="flex items-start mt-6 space-x-4">
+          <h1 className="text-4xl font-bold text-gray-900 mt-2">{guide.title}</h1>
+          <div className="w-10 h-10 flex justify-center items-center bg-purple-600 rounded-full mt-2">
+            <guide.icon className="text-white" />
+          </div>
+        </div>
 
-        <p className="text-lg font-semibold text-gray-500 mt-2">{guide.category} Guide</p>
+        <p className="text-lg font-medium text-gray-700 mt-2">
+          {guide.category} Guide
+        </p>
 
         <div className="mt-10 space-y-8">
           {guide.content.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h2 className="text-3xl font-semibold text-gray-800">{section.title}</h2>
+              <h2 className="text-3xl font-semibold text-gray-900">
+                {section.title}
+              </h2>
               <p className="text-lg text-gray-700">{section.text}</p>
               {section.list && (
                 <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
                   {section.list.map((item, idx) => (
-                    <li key={idx} className="hover:text-purple-500 transition duration-300">
+                    <li
+                      key={idx}
+                      className="hover:text-purple-600 transition duration-300"
+                    >
                       {item}
                     </li>
                   ))}
@@ -627,7 +632,10 @@ export default function GuidePage() {
               {section.steps && (
                 <ol className="list-decimal pl-6 mt-4 space-y-2 text-gray-700">
                   {section.steps.map((step, idx) => (
-                    <li key={idx} className="hover:text-purple-500 transition duration-300">
+                    <li
+                      key={idx}
+                      className="hover:text-purple-600 transition duration-300"
+                    >
                       {step}
                     </li>
                   ))}
@@ -637,10 +645,13 @@ export default function GuidePage() {
           ))}
 
           <div className="mt-10">
-            <h3 className="text-3xl font-semibold text-gray-800">Key Takeaways</h3>
+            <h3 className="text-3xl font-semibold text-gray-900">Key Takeaways</h3>
             <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
               {guide.keyTakeaways.map((takeaway, index) => (
-                <li key={index} className="hover:text-purple-500 transition duration-300">
+                <li
+                  key={index}
+                  className="hover:text-purple-600 transition duration-300"
+                >
                   {takeaway}
                 </li>
               ))}
@@ -648,10 +659,13 @@ export default function GuidePage() {
           </div>
 
           <div className="mt-10">
-            <h3 className="text-3xl font-semibold text-gray-800">Tips</h3>
+            <h3 className="text-3xl font-semibold text-gray-900">Tips</h3>
             <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
               {guide.tips.map((tip, index) => (
-                <li key={index} className="hover:text-purple-500 transition duration-300">
+                <li
+                  key={index}
+                  className="hover:text-purple-600 transition duration-300"
+                >
                   {tip}
                 </li>
               ))}
@@ -660,12 +674,12 @@ export default function GuidePage() {
 
           {relatedGuides.length > 0 && (
             <div className="mt-10">
-              <h3 className="text-3xl font-semibold text-gray-800">Related Guides</h3>
+              <h3 className="text-3xl font-semibold text-gray-900">Related Guides</h3>
               <ul className="mt-4 space-y-2">
                 {relatedGuides.map((relatedGuide) => (
                   <li key={relatedGuide.id}>
                     <Link
-                      to={`/guides/${relatedGuide.id}`} // Use the guide's ID for navigation
+                      to={`/guides/${relatedGuide.id}`}
                       className="text-lg text-purple-600 hover:underline hover:text-purple-800 transition duration-300"
                     >
                       {relatedGuide.title}
@@ -680,5 +694,6 @@ export default function GuidePage() {
     </div>
   );
 }
+
 
   
