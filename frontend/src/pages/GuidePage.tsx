@@ -109,7 +109,7 @@ const guides: Guide[] = [
       "Research thoroughly before choosing investment options.",
       "Use tools like SIPs for consistent investment habits.",
     ],
-    relatedGuides: [2, 3],
+    relatedGuides: [2, 3,4],
   },
 
   {
@@ -201,7 +201,7 @@ const guides: Guide[] = [
       "Keep emotions in check to make rational decisions.",
       "Use trusted platforms for research and trading.",
     ],
-    relatedGuides: [1, 3], // Assuming these guides are related
+    relatedGuides: [1, 3, 5], 
   },
 
   {
@@ -293,7 +293,7 @@ const guides: Guide[] = [
       "Avoid over-diversifying to ensure meaningful returns.",
       "Stay informed about market trends and adjust your strategy as needed.",
     ],
-    relatedGuides: [1, 2], 
+    relatedGuides: [1, 2, 4], 
   },
 
   {
@@ -386,7 +386,7 @@ const guides: Guide[] = [
       "Prioritize paying off high-interest debt before increasing retirement contributions.",
       "Plan for healthcare costs by exploring insurance and HSA options.",
     ],
-    relatedGuides: [1, 3], 
+    relatedGuides: [1, 3, 6], 
   },
   {
     id: 5,
@@ -478,7 +478,7 @@ const guides: Guide[] = [
       "Stay disciplined and stick to your trading plan, even during market fluctuations.",
       "Monitor implied volatility closely to identify opportunities and risks.",
     ],
-    relatedGuides: [3, 4], 
+    relatedGuides: [2, 3, 6], 
   },
   {
     id: 6,
@@ -570,8 +570,8 @@ const guides: Guide[] = [
       "Consider a tax advisor for complex tax situations.",
       "Regularly review your portfolio for tax-efficiency opportunities.",
     ],
-    relatedGuides: [2, 5], // Related to stock market basics and advanced trading
-  },// Add other guides similarly...
+    relatedGuides: [1, 4 ,5], 
+  }
 ];
 
 export default function GuidePage() {
