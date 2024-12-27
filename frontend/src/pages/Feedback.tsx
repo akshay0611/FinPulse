@@ -48,7 +48,7 @@ export default function FeedbackPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow bg-gray-50">
-        {/* Header Section */}
+        
         <section className="py-20 bg-gradient-to-r from-green-500 to-blue-500 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <motion.div
@@ -63,7 +63,7 @@ export default function FeedbackPage() {
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
         </section>
 
-        {/* Feedback Form Section */}
+       
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="bg-white p-8 rounded-lg shadow-lg">
