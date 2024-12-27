@@ -78,7 +78,7 @@ const Schemes = () => {
 
 
 
-        {/* Dropdown for Category Selection */}
+      
         <div className="container mx-auto px-6 mt-3">
           <div className="flex justify-between items-center">
             <label htmlFor="category" className="text-lg font-semibold text-gray-700">
@@ -99,7 +99,7 @@ const Schemes = () => {
           </div>
         </div>
 
-        {/* Grid of Schemes */}
+       
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {filteredSchemes.map((scheme, index) => (
             <div
@@ -114,7 +114,7 @@ const Schemes = () => {
                 />
               )}
               <div className="flex-grow">
-                {/* Badge above the title */}
+               
                 <span className="inline-block bg-emerald-500 text-white font-medium text-xs uppercase tracking-wide rounded-full px-4 py-2 mb-6">
                   {scheme.category}
                 </span>
@@ -133,7 +133,7 @@ const Schemes = () => {
           ))}
         </div>
 
-        {/* No Results Found */}
+       
         {filteredSchemes.length === 0 && (
           <div className="text-center text-gray-600 mt-12 text-lg">
             No schemes available for the selected category.
