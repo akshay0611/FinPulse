@@ -14,7 +14,7 @@ const jobOpenings = [
 ];
 
 const BenefitCard = ({ icon: Icon, title, description }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+  <div className="bg-white rounded-lg shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-xl">
     <Icon className="w-10 h-10 text-purple-600 mb-4 mx-auto" />
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
@@ -22,7 +22,7 @@ const BenefitCard = ({ icon: Icon, title, description }) => (
 );
 
 const JobCard = ({ title, department, location, type, salary, responsibilities }) => (
-  <div className="bg-white rounded-lg shadow-lg p-6">
+  <div className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-sm text-gray-600 mb-4">{department}</p>
     <p className="text-sm text-gray-600 mb-4">{location} • {type}</p>
