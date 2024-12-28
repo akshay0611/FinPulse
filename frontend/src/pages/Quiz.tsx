@@ -52,6 +52,86 @@ const quizQuestions = [
       "Investing only in government bonds"
     ],
     correctAnswer: 1
+  },
+  {
+    question: "What is the formula for calculating net profit?",
+    options: [
+      "Revenue - Cost of Goods Sold",
+      "Revenue - Total Expenses",
+      "Revenue - Operating Expenses",
+      "Revenue - Taxes"
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: "What is the term for the original cost of an asset minus accumulated depreciation?",
+    options: [
+      "Fair market value",
+      "Book value",
+      "Salvage value",
+      "Net realizable value"
+    ],
+    correctAnswer: 1
+  },
+  {
+    question: "Which of the following is an example of a fixed expense?",
+    options: [
+      "Utility bills",
+      "Employee wages",
+      "Rent or lease payments",
+      "Raw material costs"
+    ],
+    correctAnswer: 2
+  },
+  {
+    question: "What is the main goal of a monetary policy?",
+    options: [
+      "To control inflation and stabilize the currency",
+      "To increase government spending",
+      "To create employment opportunities",
+      "To regulate international trade"
+    ],
+    correctAnswer: 0
+  },
+  {
+    question: "What is the purpose of a financial audit?",
+    options: [
+      "To provide investment advice",
+      "To ensure compliance with tax laws",
+      "To assess the accuracy of financial statements",
+      "To predict future financial performance"
+    ],
+    correctAnswer: 2
+  },
+  {
+    question: "What does EPS stand for in finance?",
+    options: [
+      "Earnings Per Share",
+      "Equity Performance Score",
+      "Economic Profit Summary",
+      "Enterprise Profit System"
+    ],
+    correctAnswer: 0
+  },
+  {
+    question: "Which of the following describes a bull market?",
+    options: [
+      "A market experiencing a steady decline in prices",
+      "A market with stable prices",
+      "A market experiencing rising prices and investor optimism",
+      "A market with high volatility and no clear direction"
+    ],
+    correctAnswer: 2
+  },
+  {
+    question: "What is the time value of money principle?",
+    options: [
+      "Money today is worth the same as money in the future",
+      "Money today is worth less than money in the future",
+      "Money today is worth more than money in the future due to earning potential",
+      "Money today and in the future have no financial significance"
+    ],
+    correctAnswer: 2
   }
 ];
 
