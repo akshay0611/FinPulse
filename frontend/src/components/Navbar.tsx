@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import { TrendingUp, Menu, X, ChevronDown, Search } from 'lucide-react'
+import SearchBar from './SearchBar'; // Correct import path
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -174,16 +175,5 @@ const MobileNavDropdown = ({ title, children }: { title: string; children: React
     </div>
   )
 }
-
-const SearchBar = () => (
-  <div className="relative w-full max-w-md mx-auto">
-    <input
-      type="search"
-      placeholder="Search..."
-      className="w-full bg-indigo-800 text-white placeholder-indigo-300 border-indigo-700 focus:border-emerald-400 rounded-md py-2 px-4 pr-10"
-    />
-    <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-indigo-300" />
-  </div>
-)
 
 export default Navbar
