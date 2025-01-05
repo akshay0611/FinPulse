@@ -1,129 +1,189 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { TrendingUp, Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom'; 
-import SearchBar from './SearchBar'; 
+'use client'
+
+import React, { useState, useEffect, useRef } from 'react'
+import { TrendingUp, Menu, X, ChevronDown, Search } from 'lucide-react'
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
-  const [learnDropdownOpen, setLearnDropdownOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const toolsRef = useRef<HTMLDivElement>(null);
-  const learnRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => {
-    setMenuOpen(prevState => !prevState);
-  };
-
-  const toggleToolsDropdown = () => {
-    setToolsDropdownOpen(prevState => !prevState);
-  };
-
-  const toggleLearnDropdown = () => {
-    setLearnDropdownOpen(prevState => !prevState);
-  };
+    setMenuOpen(prevState => !prevState)
+  }
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (menuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMenuOpen(false);
+        setMenuOpen(false)
       }
-      if (toolsDropdownOpen && toolsRef.current && !toolsRef.current.contains(event.target as Node)) {
-        setToolsDropdownOpen(false);
-      }
-      if (learnDropdownOpen && learnRef.current && !learnRef.current.contains(event.target as Node)) {
-        setLearnDropdownOpen(false);
-      }
-    };
+    }
 
-    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('mousedown', handleOutsideClick)
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
-  }, [menuOpen, toolsDropdownOpen, learnDropdownOpen]);
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [menuOpen])
 
   return (
     <nav className="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-4 px-6 flex items-center justify-between fixed w-full top-0 z-50 transition-all duration-300 ease-in-out">
-      {/* Hamburger Menu for Mobile */}
-      <div className="lg:hidden flex items-center">
-        <button onClick={toggleMenu} aria-label="Toggle menu" className="focus:outline-none focus:ring-2 focus:ring-emerald-400">
+      {/* Desktop logo - hidden on mobile */}
+      <a href="/" className="hidden md:flex items-center gap-2">
+        <TrendingUp className="h-6 w-6 text-emerald-400" />
+        <h1 className="text-2xl font-bold">Fin<span className="text-emerald-400">Pulse</span></h1>
+      </a>
+
+      {/* Search Bar Component - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:block">
+        <SearchBar />
+      </div> 
+
+      {/* Desktop menu */}
+      <div className="hidden md:flex items-center space-x-6">
+        <NavLink href="/about">About</NavLink>
+        <NavLink href="/news">News</NavLink>
+        <NavLink href="/schemes">Schemes</NavLink>
+        <NavLink href="/investments">Investments</NavLink>
+        <NavLink href="/blog">Blogs</NavLink>
+        <NavDropdown title="Tools">
+          <a href="/market-pulse" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Market Pulse</a>
+          <a href="/calculators" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Calculators</a>
+        </NavDropdown>
+        <NavDropdown title="Learn">
+          <a href="/courses" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Courses</a>
+          <a href="/quiz" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Quiz</a>
+        </NavDropdown>
+        <a href="/signin-signup">
+          <button className="px-6 py-2 rounded-full bg-emerald-400 text-white hover:bg-emerald-500 transition-all duration-200 ease-in-out">
+            Sign In / Sign Up
+          </button>
+        </a>
+      </div>
+
+      {/* Mobile menu button and logo */}
+      <div className="md:hidden flex items-center justify-between w-full">
+        {/* Mobile logo - visible on mobile */}
+        <a href="/" className="flex items-center gap-2">
+          <TrendingUp className="h-6 w-6 text-emerald-400" />
+          <h1 className="text-2xl font-bold">Fin<span className="text-emerald-400">Pulse</span></h1>
+        </a>
+        <button
+          onClick={toggleMenu}
+          className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open main menu</span>
           {menuOpen ? (
-            <X className="h-6 w-6 text-white" />
+            <X className="block h-6 w-6" aria-hidden="true" />
           ) : (
-            <Menu className="h-6 w-6 text-white" />
+            <Menu className="block h-6 w-6" aria-hidden="true" />
           )}
         </button>
       </div>
 
-      <div className="flex items-center gap-2">
-        <Link to="/" className="flex items-center gap-2">
-          <TrendingUp className="h-6 w-6 text-emerald-400" />
-          <h1 className="text-2xl font-bold">Fin<span className="text-emerald-400">Pulse</span></h1>
-        </Link>
-      </div>
-
-      {/* Search Bar Component */}
-      <SearchBar /> {/* Pass pages array inside SearchBar */}
-
-      {/* Menu items */}
-      <div ref={menuRef} className={`navbar-menu fixed top-0 left-0 h-full bg-indigo-900 z-40 transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:static lg:flex lg:items-center lg:space-x-6 lg:translate-x-0 lg:bg-transparent`}>
-        <div className={`flex flex-col lg:flex-row ${menuOpen ? 'space-y-4 mt-2 lg:space-y-0 lg:space-x-6' : 'space-x-6'}`}>
-          <Link to="/about" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">About</Link>
-          <Link to="/news" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">News</Link>
-          <Link to="/schemes" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Schemes</Link>
-          <Link to="/investments" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Investments</Link>
-          <Link to="/blog" className="hover:text-emerald-400 transition-all duration-200 ease-in-out">Blogs</Link>
-
-          {/* Tools Dropdown */}
-          <div ref={toolsRef} className="relative">
+      {/* Mobile menu */}
+      <div
+        ref={menuRef}
+        className={`md:hidden fixed inset-0 z-50 bg-indigo-900 ${menuOpen ? 'block' : 'hidden'}`}
+      >
+        <div className="px-4 pt-4 pb-3 space-y-4">
+          <div className="flex items-center justify-between">
+            {/* Mobile logo - visible on mobile */}
+            <a href="/" className="flex items-center gap-2">
+              <TrendingUp className="h-6 w-6 text-emerald-400" />
+              <h1 className="text-2xl font-bold text-white">Fin<span className="text-emerald-400">Pulse</span></h1>
+            </a>
             <button
-              onClick={toggleToolsDropdown}
-              className="flex items-center gap-1 hover:text-emerald-400 transition-all duration-200 ease-in-out focus:outline-none"
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
-              Tools <ChevronDown className="h-4 w-4 text-emerald-400" />
+              <X className="block h-6 w-6" aria-hidden="true" />
             </button>
-            {toolsDropdownOpen && (
-              <div className="absolute bg-indigo-800 text-white rounded-lg shadow-lg p-2 mt-2 space-y-2">
-                <Link to="/market-pulse" className="flex items-center gap-2 hover:text-emerald-400 transition-all duration-200 ease-in-out">
-                  Market Pulse
-                </Link>
-                <Link to="/calculators" className="flex items-center gap-2 hover:text-emerald-400 transition-all duration-200 ease-in-out">
-                  Calculators
-                </Link>
-              </div>
-            )}
           </div>
-
-          {/* Learn Dropdown */}
-          <div ref={learnRef} className="relative">
-            <button
-              onClick={toggleLearnDropdown}
-              className="flex items-center gap-1 hover:text-emerald-400 transition-all duration-200 ease-in-out focus:outline-none"
-            >
-              Learn <ChevronDown className="h-4 w-4 text-emerald-400" />
-            </button>
-            {learnDropdownOpen && (
-              <div className="absolute bg-indigo-800 text-white rounded-lg shadow-lg p-2 mt-2 space-y-2">
-                <Link to="/courses" className="flex items-center gap-2 hover:text-emerald-400 transition-all duration-200 ease-in-out">
-                  Courses
-                </Link>
-                <Link to="/quiz" className="flex items-center gap-2 hover:text-emerald-400 transition-all duration-200 ease-in-out">
-                  Quiz
-                </Link>
-              </div>
-            )}
+          <SearchBar />
+          <MobileNavLink href="/about">About</MobileNavLink>
+          <MobileNavLink href="/news">News</MobileNavLink>
+          <MobileNavLink href="/schemes">Schemes</MobileNavLink>
+          <MobileNavLink href="/investments">Investments</MobileNavLink>
+          <MobileNavLink href="/blog">Blogs</MobileNavLink>
+          <MobileNavDropdown title="Tools">
+            <a href="/market-pulse" className="block px-3 py-2 text-base font-medium text-white hover:bg-indigo-700">Market Pulse</a>
+            <a href="/calculators" className="block px-3 py-2 text-base font-medium text-white hover:bg-indigo-700">Calculators</a>
+          </MobileNavDropdown>
+          <MobileNavDropdown title="Learn">
+            <a href="/courses" className="block px-3 py-2 text-base font-medium text-white hover:bg-indigo-700">Courses</a>
+            <a href="/quiz" className="block px-3 py-2 text-base font-medium text-white hover:bg-indigo-700">Quiz</a>
+          </MobileNavDropdown>
+          <div className="mt-4">
+            <a href="/signin-signup" className="block w-full">
+              <button className="w-full px-6 py-2 rounded-full bg-emerald-400 text-white hover:bg-emerald-500 transition-all duration-200 ease-in-out">
+                Sign In / Sign Up
+              </button>
+            </a>
           </div>
-
-          <Link to="/signin-signup">
-            <button className="px-6 py-2 rounded-full bg-emerald-400 text-white hover:bg-emerald-500 transition-all duration-200 ease-in-out">
-              Sign In / Sign Up
-            </button>
-          </Link>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a href={href} className="text-white hover:text-emerald-400 transition-all duration-200 ease-in-out">
+    {children}
+  </a>
+)
+
+const NavDropdown = ({ title, children }: { title: string; children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="text-white hover:text-emerald-400 transition-all duration-200 ease-in-out focus:outline-none"
+      >
+        {title} <ChevronDown className="inline-block h-4 w-4 ml-1" />
+      </button>
+      {isOpen && (
+        <div className="absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+            {children}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a href={href} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-700">
+    {children}
+  </a>
+)
+
+const MobileNavDropdown = ({ title, children }: { title: string; children: React.ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-indigo-700 focus:outline-none"
+      >
+        {title} <ChevronDown className="inline-block h-4 w-4 ml-1" />
+      </button>
+      {isOpen && <div className="pl-4">{children}</div>}
+    </div>
+  )
+}
+
+const SearchBar = () => (
+  <div className="relative w-full max-w-md mx-auto">
+    <input
+      type="search"
+      placeholder="Search..."
+      className="w-full bg-indigo-800 text-white placeholder-indigo-300 border-indigo-700 focus:border-emerald-400 rounded-md py-2 px-4 pr-10"
+    />
+    <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-indigo-300" />
+  </div>
+)
+
+export default Navbar
