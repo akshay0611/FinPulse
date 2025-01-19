@@ -2,7 +2,10 @@
 
 FinPulse is a cutting-edge web application designed to deliver **financial news**, **investment ideas**, **insights into government schemes**, and **engaging blog articles**. With a mission to empower users, the platform offers curated updates and resources to help individuals and businesses make **well-informed financial decisions**. 💼💰
 
----
+<p align="center">
+  <img src="frontend/src/assets/Finpulsebanner.png" alt="Heal Well" width="800"/>
+</p>
+
 
 ## Features 🌟
 
